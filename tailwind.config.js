@@ -7,7 +7,8 @@ module.exports = {
      orange: '#ff9f58',
      yell: '#f6d895',
      koko: '#362c29',
-     brown: '#996550'
+     brown: '#996550',
+     dark:'#0A0D57'
 
     }
   },
