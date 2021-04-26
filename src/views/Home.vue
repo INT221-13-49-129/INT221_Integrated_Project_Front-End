@@ -1,6 +1,6 @@
 <template>
   <div class="home font-sans bg-gradient-to-r from-dark via-red-500 to-red-600 ">
-    <div class="w-sreen h-screen items-center justify-end bgimg bg-local bg-cover bg-no-repeat bg-top  ">
+    <div class="w-sreen h-120 items-center justify-end bgimg bg-local bg-cover bg-no-repeat bg-top  ">
       <div class="w-1/2 h-5/6">
         <p class="font-base text-3xl tracking-wider  ml-36 pt-20 text-white">LAMBORGHINI</p>
         <p class="font-base text-7xl tracking-wider  ml-36 pt-2  text-white">OWNERSHIP</p>
@@ -131,15 +131,15 @@
 
 
       <footer class="pt-5 mt-10  body-font bg-black bg-opacity-90 shadow-2xl ">
-        <div class="container flex flex-col flex-wrap items-center p-5 mx-auto md:flex-row md:flex-no-wrap ">
-          <nav class="flex flex-wrap justify-center  items-cente text-base md:mr-auto md:ml-4 ">
-            <a class="text-gray-100 hover:text-gray-500">
+        <div class="container flex flex-col flex-wrap items-center px-5 mx-auto md:flex-row md:flex-no-wrap ">
+          <nav class="flex flex-wrap justify-center  items-cente text-base md:mr-auto ">
+            <a class="text-gray-300 hover:text-gray-500">
               <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
                 viewBox="0 0 24 24">
                 <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
               </svg>
             </a>
-            <a class="ml-4 text-gray-100 hover:text-gray-500">
+            <a class="ml-4 text-gray-300 hover:text-gray-500">
               <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
                 viewBox="0 0 24 24">
                 <path
@@ -147,7 +147,7 @@
                 </path>
               </svg>
             </a>
-            <a class="ml-4 text-gray-100 hover:text-gray-500">
+            <a class="ml-4 text-gray-300 hover:text-gray-500">
               <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 class="w-5 h-5" viewBox="0 0 24 24">
                 <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
