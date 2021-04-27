@@ -4,15 +4,15 @@
 
  <template>
    <div class="store flex flex-row justify items-end  font-sans">
-     <h1 class="text-3xl font-bold ml-16">Cars Available</h1>
+     <h1 class="text-3xl font-bold ml-16 text-white">Cars Available</h1>
      <div class="flex-grow"></div>
      <li class="font-light text-2ml px-2">
-       <div class=" relative text-gray-300">
+       <div class=" relative text-gray-100">
          <button type="submit" class="focus:outline-none absolute mt-2 ml-3 ">
            <i class="material-icons ">search</i>
          </button>
          <input
-           class="border-2 rounded-lg border-gray-200 bg-gray-800 bg-opacity-5 h-8 px-5 pl-10  text-medium focus:outline-none "
+           class="border-2 rounded-lg border-gray-100 bg-gray-800 bg-opacity-5 h-8 px-5 pl-10  text-medium focus:outline-none "
            placeholder="Search ">
        </div>
      </li>
@@ -33,7 +33,9 @@
    
    gi">
      <div class="flex-grow"></div>
-     <p class="my-3 mx-10 mr-12 p-3 text-2xl font-bold bg-gray-100 rounded-lg text-gray-800"> + ADD CAR </p>
+     <router-link to="/add">
+     <button class="my-3 mx-10 mr-12 px-3 py-1 text-2xl font-bold bg-gray-100 rounded-lg text-gray-800"> + ADD CAR </button>
+     </router-link>
    </div>
  </template>
 
