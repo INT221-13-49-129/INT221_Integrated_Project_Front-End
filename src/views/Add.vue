@@ -1,5 +1,5 @@
 <template>
-  <div class="about font-sans ">
+  <div class="add font-sans ">
     <div class="px-56 ">
     <div class="px-20  bg-white bg-opacity-90 ">
       <h1 class="font-bold text-4xl text-center py-5 text-gray-800">ADD CAR</h1>

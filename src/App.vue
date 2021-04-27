@@ -2,7 +2,7 @@
   <div id class="bg-gradient-to-br from-dark to-red-600 h-full xl:w-full w-336 ">
     <div id="nav" class="bg-gray-900 w-full h-12 font-mono shadow-2xl">
       <div class="mx-auto flex flex-row item-center w-320">
-        <div class="w-3/12">
+        <div class="w-4/12">
           <router-link to="/">
             <img src="./assets/logoCar.png" class="mt-1" />
           </router-link>
@@ -16,7 +16,7 @@
             </router-link>
           </li>
         </ul>
-        <ul class="my-auto flex flex-row justify-end h-full text-white text-base w-3/12">
+        <ul class="my-auto flex flex-row justify-end h-full text-white text-base w-4/12">
           <li class="px-4">
             <router-link to="/">
               <span>
@@ -28,6 +28,13 @@
             <router-link to="/store">
               <span>
                 <b>STORE</b>
+              </span>
+            </router-link>
+          </li>
+          <li class="px-4">
+            <router-link to="/add">
+              <span>
+                <b>ADD-CAR</b>
               </span>
             </router-link>
           </li>
