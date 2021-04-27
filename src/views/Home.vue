@@ -9,7 +9,7 @@
         <div class="ml-36 mt-12">
           <router-link to="/store">
             <button
-              class="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 focus:ring focus:outline-none text-xs text-black font-base tracking-wider uppercase w-52 h-10 rounded-lg shadow-2xl bg-gray-200 hover:bg-gray-900 hover:text-white  ">
+              class="font-bold transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 focus:ring focus:outline-none text-xs text-black tracking-wider uppercase w-52 h-10 rounded-lg shadow-2xl bg-gray-200 hover:bg-gray-900 hover:text-black bg-gradient-to-r to-gray-400 via-gray-100  from-gray-400 ">
               shop now
             </button>
           </router-link>
@@ -40,7 +40,7 @@
           <div class="flex flex-wrap justify-center mx-auto ">
             <div class="flex flex-wrap text-left ">
 
-              <div class="px-8 py-6 lg:w-1/3 md:w-full">
+              <div class="px-8 py-6 lg:w-1/3 md:w-full transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-125 focus:ring focus:outline-none ">
                 <div class=" container items-center  p-6 rounded-md bg-blueGray-200 flex flex-col ">
                   <img class="object-cover object-center w-full h-40 mb-6 rounded" src="../assets/home/bg1.jpg"
                     alt="content">
@@ -53,12 +53,11 @@
                 </div>
               </div>
 
-              <div class="px-8 py-6 lg:w-1/3 md:w-full">
+              <div class="px-8 py-6 lg:w-1/3 md:w-full transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-125 focus:ring focus:outline-none ">
                 <div class=" container items-center  p-6 rounded-md bg-blueGray-200 flex flex-col ">
-                  <img class="object-cover object-center w-full h-full mb-6 rounded" src="../assets/home/bg1.jpg"
+                  <img class="object-cover object-center w-full h-40 mb-6 rounded" src="../assets/home/bg1.jpg"
                     alt="content">
-                  <h2 class="text-sm font-semibold text-gray-700  title-font "> Product Name
-                  </h2>
+                  <h2 class="text-sm font-semibold text-gray-700  title-font "> Product Name</h2>
                   <p class="mb-4 text-xs leading-relaxed">type product</p>
                   <p class="mb-4 text-xs leading-relaxed">$Price</p>
                   <a href="#"
@@ -67,7 +66,7 @@
                 </div>
               </div>
 
-              <div class="px-8 py-6 lg:w-1/3 md:w-full">
+              <div class="px-8 py-6 lg:w-1/3 md:w-full transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-125 focus:ring focus:outline-none ">
                 <div class=" container items-center  p-6 rounded-md bg-blueGray-200 flex flex-col ">
                   <img class="object-cover object-center w-full h-40 mb-6 rounded" src="../assets/home/bg1.jpg"
                     alt="content">

@@ -1,6 +1,6 @@
 <template>
-  <div id="nav" class="bg-red-600 h-1 w-full "></div>
-  <div id="nav" class="bg-gray-900 w-auto h-1/2 mx-auto flex flex-row item-center font-mono shadow-2xl ">
+  <div id="nav" class="bg-red-600 h-1 w-full bg-gradient-to-r to-blue-900 via-red-500 from-purple-800"></div>
+  <div id="nav" class="bg-gray-900 w-auto h-1/2 mx-auto flex flex-row item-center font-mono shadow-2xl">
     <ul class="text-white">
       <li class=" px-10 py-1.5 font-normal text-3xl"><span><b>CARS</b></span></li></ul>
     <div class="flex-grow"></div>
