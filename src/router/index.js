@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Store from '../views/Store.vue'
-
+import Add from '../views/Add.vue'
 
 
 const routes = [
@@ -17,6 +17,12 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  }
+  ,
+  {
+    path: '/add',
+    name: 'Add',
+    component: Add
   },
   {
     path: '/store',
