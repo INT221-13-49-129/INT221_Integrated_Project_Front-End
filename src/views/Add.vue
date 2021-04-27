@@ -28,8 +28,8 @@
         class="flex-grow mr-4 ml-2 rounded-lg shadow-xl w-3/4"> </div>
         <div class="text-lg mt-2 flex flex-row"> <label>YEAR OF MANUFACTURE : </label><input type="date" 
             class="flex-grow mr-4 ml-2 rounded-lg shadow-xl w-3/4"> </div>
-            <div class="text-lg mt-2 flex flex-row"> <label>DESCRIPTION : </label><input 
-            class="flex-grow mr-4 ml-2 rounded-lg shadow-xl h-20 w-3/4"> </div>
+            <div class="text-lg mt-2 flex flex-row"> <label>DESCRIPTION : </label><textarea 
+            class="flex-grow mr-4 ml-2 rounded-lg shadow-xl h-20 w-3/4"></textarea> </div>
         <div class="flex flex-row justify-center mt-5  pt-16 pb-28 ">
           <button @click="submit"
             class="font-bold text-xl tracking-wider uppercase px-7 mx-6 h-10 text-white rounded-lg shadow-xl 
