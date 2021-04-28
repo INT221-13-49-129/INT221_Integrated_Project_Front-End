@@ -1,5 +1,5 @@
 <template>
-  <div id class="bg-gradient-to-br from-dark to-red-600 h-full xl:w-full w-336 ">
+  <div id class="flex flex-col bg-gradient-to-br from-dark to-red-600 min-h-screen xl:w-full w-336">
     <div id="nav" class="bg-gray-900 w-full h-12 font-mono shadow-2xl">
       <div class="mx-auto flex flex-row item-center w-320">
         <div class="w-4/12">
@@ -48,7 +48,7 @@
         </ul>
       </div>
     </div>
-    <div class="w-320 mx-auto bgimge">
+    <div class="w-320 mx-auto bgimge flex-grow">
       <router-view />
     </div>
     <footer class="pt-5 mt-10 bg-black bg-opacity-90 shadow-2xl">
