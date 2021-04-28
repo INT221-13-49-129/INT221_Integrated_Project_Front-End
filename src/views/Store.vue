@@ -63,32 +63,45 @@
       class-text-name="font-light text-xl -mt-1 flex-grow" class-div="flex flex-row items-center" class-img="h-12" :product="pro" :power="true" :torque="true" :weight="true"></base-product>
       </div>
     </div>
+    <div class="w-full">
+      <base-page-number :page="productPage"></base-page-number>
+    </div>
   </div>
 </template>
  <script>
 export default {
   data() {
     return {
-      productGrid:!true,
+      productGrid:true,
       searchInput:"",
       brandSelected: "",
       brandAll: [],
       productPage: [],
       urlbrand: "http://localhost:3000/brand",
-      urlProduct: "http://localhost:3000/product"
+      urlProduct: "http://localhost:3000/product",
+      urlPage:"",
     };
   },
   methods: {
+    async changPage(n){
+      if(this.urlPage.includes("?")){
+        this.productPage = await this.fetch(this.urlPage+'&pageNo='+(n-1))
+      }else{
+        this.productPage = await this.fetch(this.urlPage+'?pageNo='+(n-1))
+      }
+    },
     async searchfilter() {
-        this.productPage = await this.fetch(this.urlProduct + '/page/search?searchData='+this.searchInput)
+        this.urlPage = this.urlProduct + '/page/search?searchData=' + this.searchInput
+        this.productPage = await this.fetch(this.urlPage)
         this.brandSelected=""
     },
     async brandfilter(id) {
       if(!id==""){
-        this.productPage = await this.fetch(this.urlProduct + '/page/brand?brandId='+id)
+        this.urlPage = this.urlProduct + '/page/brand?brandId='+id
       }else{
-        this.productPage = await this.fetch(this.urlProduct + '/page')
+        this.urlPage = this.urlProduct + '/page'
       }
+      this.productPage = await this.fetch(this.urlPage)
       this.searchInput=""
     },
     async fetch(url) {
@@ -103,7 +116,8 @@ export default {
   },
   async created() {
     this.brandAll = await this.fetch(this.urlbrand)
-    this.productPage = await this.fetch(this.urlProduct + '/page')
+    this.urlPage = this.urlProduct + '/page'
+    this.productPage = await this.fetch(this.urlPage)
   },
 }
 </script>
