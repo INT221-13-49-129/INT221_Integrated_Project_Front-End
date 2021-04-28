@@ -43,7 +43,7 @@
           <div class="flex flex-col justify-center mx-auto">
             <div class="flex flex-row justify-center items-center pt-5 mt-4">
               <div v-for="pro in productRand" :key="pro.productid" @click="productCurrent = pro" :class="{'scale-125 opacity-100': pro.productid==productCurrent.productid}" class="bg-white w-80 bg-opacity-90 opacity-60 hover:opacity-100 rounded-lg shadow-md pb-3 mx-11 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-125 focus:ring focus:outline-none">
-                <base-product :product="pro" class-text="text-center"></base-product>
+                <base-product :product="pro" :descrip="true" class-text="text-center" class-text-name="text-2xl font-medium" class-div="flex flex-col items-center" class-img="w-10/12"></base-product>
               </div>
             </div>
             <div class="flex flex-row justify-center items-center pt-5 text-center text-7xl text-black mt-12 font-normal">
