@@ -1,7 +1,7 @@
 <template>
     <div class="add font-serif font-light ">
         <div class="px-56">
-            <div class="px-20  bg-white bg-opacity-90 ">
+            <div class="px-20  bg-white bg-opacity-80 ">
                 <h1 class="font-base text-4xl text-center py-5 text-gray-800">Add Carsgit </h1>
                 <div class="items-center flex flex-col  w-full ">
                     <img class="object-cover object-center" alt="addcar" src="../assets/home/add.png">
@@ -16,21 +16,21 @@
                 </div>
                 <div class="container flex flex-col mt-5 text-gray-700 font-normal ">
                     <div class="text-lg  mt-2 "> <label class="shadow-xl"> NAME : </label><br>
-                        <input class="flex-grow mr-4 ml-2 rounded-md shadow-xl w-full bg-white bg-opacity-50"> </div>
+                        <input class="flex-grow mr-4 ml-2 rounded-md shadow-inner w-full bg-white bg-opacity-50 h-10"> </div>
                     <div class="text-lg  mt-2"> <label class="shadow-xl">BRAND : </label><br>
-                        <input class="flex-grow mr-4 ml-2 rounded-md shadow-xl w-full bg-white bg-opacity-50"> </div>
+                        <input class="flex-grow mr-4 ml-2 rounded-md shadow-inner w-full bg-white bg-opacity-50 h-10"> </div>
                     <div class="text-lg mt-2"> <label class="shadow-xl">POWER : </label><br><input type="number"
-                            class="flex-grow mr-4 ml-2 rounded-md shadow-xl w-full bg-white bg-opacity-50"> </div>
+                            class="flex-grow mr-4 ml-2 rounded-md shadow-inner w-full bg-white bg-opacity-50 h-10"> </div>
                     <div class="text-lg  mt-2 "> <label class="shadow-xl">TORQUE : </label><br><input type="number"
-                            class="flex-grow mr-4 ml-2 rounded-md shadow-xl w-full bg-white bg-opacity-50"> </div>
+                            class="flex-grow mr-4 ml-2 rounded-md shadow-inner w-full bg-white bg-opacity-50 h-10"> </div>
                     <div class="text-lg mt-2"> <label class="shadow-xl">WEIGHT : </label><br><input type="number"
-                            class="flex-grow mr-4 ml-2 rounded-md shadow-xl w-full bg-white bg-opacity-50"> </div>
+                            class="flex-grow mr-4 ml-2 rounded-md shadow-inner w-full bg-white bg-opacity-50 h-10"> </div>
                     <div class="text-lg  mt-2"> <label class="shadow-xl">DRIVERTRAIN : </label><br><input type="number"
-                            class="flex-grow mr-4 ml-2 rounded-md shadow-xl w-full bg-white bg-opacity-50"> </div>
+                            class="flex-grow mr-4 ml-2 rounded-md shadow-inner w-full bg-white bg-opacity-50 h-10"> </div>
                     <div class="text-lg mt-2 "> <label class="shadow-xl">YEAR OF MANUFACTURE : </label><br><input type="date"
-                            class="flex-grow mr-4 ml-2 rounded-md shadow-xl w-full bg-white bg-opacity-50"> </div>
+                            class="flex-grow mr-4 ml-2 rounded-md shadow-inner w-full bg-white bg-opacity-50 h-10"> </div>
                     <div class="text-lg mt-2 "> <label class="shadow-xl">DESCRIPTION : </label><br><textarea
-                            class="flex-grow mr-4 ml-2 rounded-md shadow-xl h-20 w-full bg-white bg-opacity-50"></textarea>
+                            class="flex-grow mr-4 ml-2 rounded-md shadow-inner h-20 w-full bg-white bg-opacity-50 "></textarea>
                     </div>
                     <div class="flex flex-row justify-center mt-5  pt-16 pb-28 ">
                         <button @click="submit" class="text-lg tracking-wider uppercase px-7 mx-6 h-10 text-white rounded-lg shadow-xl 
