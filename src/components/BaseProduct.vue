@@ -6,7 +6,7 @@
       <div>Brand : {{ product.brand.brandname }}</div>
       <div>Drivetrain : {{ product.transmission }}</div>
       <div v-if="descrip" class="mx-8 my-3 text-sm font-light">
-        <div class="h-20 overflow-hidden">{{ product.description }}</div>
+        <div class="h-20 overflow-hidden text-xs">{{ product.description }}</div>
         <div class="-mt-2 text-lg">...</div>
       </div>
       <div v-if="power">Power : {{product.power}} kW</div>

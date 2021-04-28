@@ -28,6 +28,19 @@ module.exports = {
       '352': '88rem',
       '368': '92rem',
     },
+    animation: {
+      slide: 'slide 5s',
+    },
+    keyframes:{
+      slide: {
+        '100%' : {
+          transform:'translateY(0)'
+        },
+        '50%':{
+          transform:'translateY(-25%)'
+        },
+      }
+    },
   },
   },
   variants: {
