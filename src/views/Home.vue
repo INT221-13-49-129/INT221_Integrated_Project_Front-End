@@ -2,7 +2,7 @@
   <div class="home font-serif antialiased ">
     <div
       class="w-full h-128 flex flex-row items-center bg-local bg-cover bg-no-repeat bg-center text-white shadow-inner md:shadow-2xl"
-      :style="cssProps">
+      :style="cssProps" @mouseover="producthover = false">
       <div
         class="p-5 ml-2 rounded-full bg-black w-4 h-4 flex justify-center items-center opacity-30 hover:opacity-100 cursor-pointer">
         <span @click="nextBg(-1)" class="material-icons ml-2 font-extralight ">arrow_back_ios</span></div>
@@ -11,7 +11,7 @@
         <p class="font-medium text-7xl tracking-wider pt-2 ">OWNERSHIP</p>
         <p class="font-thin antialiased tracking-wider mt-10 w-1/2 ">Automobili Lamborghini is pleased to offer an
           attentive service thatmeets all the needs of our customers.</p>
-        <div class="ml-36 mt-12">
+        <div class="mt-12">
           <router-link to="/store">
             <button class="font-thin text-xs transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 focus:ring focus:outline-none 
               text-white tracking-wider uppercase w-52 h-10 shadow-2xl border
@@ -24,7 +24,7 @@
         <span @click="nextBg(1)" class="material-icons ml-2">arrow_forward_ios</span></div>
     </div>
 
-    <div class="h-full">
+    <div class="h-full"  @mouseover="producthover = true">
       <p class=" font-light italic text-base tracking-wider text-white text-center mt-24">
         We are Trusted Name in Car Sales & Services
       </p>
@@ -39,21 +39,21 @@
         ffor any car dealer websides, business or corporate websites. The Theme has been Created
       </p>
       <div class="">
-        <section class="text-gray-700 mt-24 ">
-          <div class="px-5 py-10 mx-auto bg-no-repeat bg-center bg-white bg-opacity-90 rounded-xl shadow-2xl  sha">
+        <section class="text-gray-700 mt-48">
+          <div :class="{'-translate-y-28 opacity-100':producthover}" class="opacity-50 px-5 py-10 mx-auto bg-no-repeat bg-center bg-white bg-opacity-90 rounded-xl shadow-2xl transition duration-700 ease-in-out transform">
           <p class="font-thin text-xl tracking-wider rounded-sm text-black text-center">BEST SELLER</p>
         <p class="font-light text-4xl tracking-wider mt-5 mb-12 textgray-900 text-center">YOUR STYPE YOU WANT</p>
             <div class="flex flex-col justify-center mx-auto ">
-              <div class="flex flex-row justify-center items-center pt-5 mt-4 ">
+              <div @mouseover="prodshowhover = false" @mouseleave="prodshowhover = true" class="flex flex-row justify-center items-center pt-5 mt-4 ">
                 <div v-for="pro in productRand" :key="pro.productid" @click="productCurrent = pro"
                   :class="{'scale-125 opacity-100': pro.productid==productCurrent.productid}"
-                  class="bg-white w-80 bg-opacity-90 opacity-60 hover:opacity-100 shadow-xl pb-3 mx-11 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-125 focus:ring focus:outline-none">
+                  class="bg-white w-80 bg-opacity-90 opacity-60 hover:opacity-100 shadow-xl pb-3 mx-11 transition duration-150 ease-in-out transform hover:-translate-y-1 hover:scale-125 focus:ring focus:outline-none">
                   <base-product :product="pro" :descrip="true" class-text="text-center text-sm font-thin"
                     class-text-name="text-xl font-medium text-gray-900" class-div="flex flex-col items-center" class-img="w-10/12">
                   </base-product>
                 </div>
               </div>
-              <div
+              <div @mouseover="prodshowhover = true"
                 class="flex flex-row justify-center items-center pt-4 text-center text-7xl text-gray-800 mt-12 font-normal">
                 <div class="w-52">
                   <div class="ml-6">{{productCurrent.power}}<span class="text-sm">(kW)</span></div><br>
@@ -77,8 +77,8 @@
 
         </section>
       </div>
-      <section class="text-gray-700 body-font pt-20">
-        <div class="flex flex-row items-center mx-auto px-20 py-16 bg-white shadow-2xl bg-opacity-90 rounded-2xl">
+      <section class="text-gray-700 body-font pt-20" @mouseover="prodshowhover = true">
+        <div :class="{'-translate-y-20 opacity-100':prodshowhover}" class="opacity-50 flex flex-row items-center mx-auto px-20 py-16 bg-white shadow-2xl bg-opacity-90 rounded-2xl transition duration-1000 ease-in-out transform">
           <div class="w-1/3 container flex flex-col items-center">
             <div>
               <h1 class="text-xl font-bold tracking-tight text-center text-gray-800">EXTERIOR & INTERIOR TWO-TONE</h1>
@@ -152,6 +152,8 @@
             img: require("../assets/home/bg9.jpg")
           },
         ],
+        producthover:false,
+        prodshowhover:false,
         productRand: [],
         productCurrent: [],
         url: "http://localhost:3000/product"
