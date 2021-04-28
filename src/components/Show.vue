@@ -1,5 +1,5 @@
  <template>
-   <div class="show">
+   <div class="show font-serif font-light">
      <div class=" w-full bg-gray-100 mb-5 flex flex-row rounded-xl ">
        <div class="w-1/2 m-5 ">
          <div class="h-full flex flex-row justify-center items-center ">
