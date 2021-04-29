@@ -7,7 +7,7 @@
            <img class="object-contain object-center -mt-20" alt="addcar" src="../assets/home/30129.png">
          </div>
          <div class="flex flex-row justify-center items-center ">
-           <div v-for="color in product.colorList" :key="color.colorid" class="w-9 h-9 rounded-full border-black border-2 shadow-lg mx-2" v-bind:style="{ backgroundColor: color.colorcode }"></div>
+           <div v-for="color in product.colorList" :key="color.colorid" class="w-9 h-9 rounded-full border-black border-2 hover:shadow-lg mx-2" v-bind:style="{ backgroundColor: color.colorcode }"></div>
          </div>
        </div>
        <div class="w-5/12 mt-4 text-gray-800 flex flex-col ">
