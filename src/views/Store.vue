@@ -1,5 +1,6 @@
  <template>
   <div class="store font-serif font-light antialiased">
+    <div v-if="showProd"><show :product="productShow"></show></div>
     <div class="flex flex-row justify items-end mt-5">
       <h1 class="text-3xl font-bold text-white">
         <span class="text-4xl">Cars</span> Available
@@ -54,11 +55,11 @@
       </div>
     </div>
     <div v-if="productGrid" class="flex flex-row flex-wrap ml-4">
-      <div class="w-72 m-3 pb-4 rounded-xl hover:bg-white hover:bg-opacity-30" v-for="pro in productPage.content" :key="pro.productid">
+      <div :class="{'bg-white bg-opacity-30':productShow.productid == pro.productid}" class="w-72 m-3 pb-4 rounded-xl hover:bg-white hover:bg-opacity-30" v-for="pro in productPage.content" :key="pro.productid" @click="showProduct(true,pro)">
       <base-product class-text="text-white text-sm mx-2" class-text-name=" font-medium text-xl" class-div="flex flex-col items-center" class-img="w-10/12" :product="pro"></base-product>
       </div></div>
     <div v-else class="flex flex-col ml-4 divide-y ">
-      <div class="w-full h-12 hover:bg-white hover:bg-opacity-30" v-for="pro in productPage.content" :key="pro.productid">
+      <div :class="{'bg-white bg-opacity-30':productShow.productid == pro.productid}" class="w-full h-12 hover:bg-white hover:bg-opacity-30" v-for="pro in productPage.content" :key="pro.productid"  @click="showProduct(true,pro)">
       <base-product class-text="text-white text-sm font-extralight mx-2 flex flex-row items-center space-x-6 w-full " 
       class-text-name="font-light text-xl -mt-1 flex-grow" class-div="flex flex-row items-center" class-img="h-12" :product="pro" :power="true" :torque="true" :weight="true"></base-product>
       </div>
@@ -69,7 +70,12 @@
   </div>
 </template>
  <script>
+import Show from '../components/Show.vue'
+
 export default {
+  components: {
+        Show,
+    },
   data() {
     return {
       productGrid:true,
@@ -80,9 +86,19 @@ export default {
       urlbrand: "http://localhost:3000/brand",
       urlProduct: "http://localhost:3000/product",
       urlPage:"",
+      showProd:false,
+      productShow:[]
     };
   },
   methods: {
+    showProduct(showProd,productShow){
+      if(showProd){
+        this.productShow = productShow;
+      }else{
+        this.productShow = []
+      }
+      this.showProd = showProd
+    },
     async changPage(n){
       if(this.urlPage.includes("?")){
         this.productPage = await this.fetch(this.urlPage+'&pageNo='+(n-1))
