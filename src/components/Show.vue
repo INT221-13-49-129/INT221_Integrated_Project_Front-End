@@ -1,6 +1,6 @@
  <template>
-   <div class="show font-serif font-light bg-opacity-20 bg-white flex justify-center items-center fixed z-10 inset-0 overflow-y-auto overflow-x-auto">
-     <div class=" w-320 h-128 bg-opacity-90 bg-gray-100 mb-5 flex flex-row rounded-xl ">
+   <div class="show font-serif fixed font-light bg-opacity-20 bg-white flex justify-center items-center  z-20 inset-0 overflow-y-auto overflow-x-auto">
+     <div class=" w-320 h-128 bg-opacity-90 bg-gray-100 mb-5 flex flex-row rounded-xl fixed ">
        <div class="w-7/12 bgsvg bg-no-repeat bg-center">
         <div class="text-5xl font-extrabold text-right mt-10 truncate">{{product.productname}}</div>
          <div class="flex flex-row justify-center items-center ">         
@@ -18,7 +18,7 @@
         </div>
          <div class="h-full flex flex-col items-center justify-center ml-5 mr-10 mb-4 mt-5">
            <div class="h-full w-full flex flex-row text-gray-800">
-             <div class="text-base font-medium text-left text-gray-800 w-full">
+             <div class="text-base font-medium text-left text-gray-800 w-full divide-y-2 divide-gray-300 border-b-2 border-gray-300">
                <div class="mt-2 flex flex-row"> <div class="flex-shrink-0">NAME : </div><div class="flex-grow text-right">{{product.productname}}</div></div>
                <div class="mt-2 flex flex-row"> <div class="flex-shrink-0">BRAND : </div><div class="flex-grow text-right">{{product.brand.brandname}}</div></div>
                <div class="mt-2 flex flex-row"> <div class="flex-shrink-0">POWER : </div><div class="flex-grow text-right">{{product.power}} kW</div></div>
@@ -30,11 +30,13 @@
              </div>
            </div>
            <div class=" flex flex-row justify-end items-center self-center p-5 w-full">
-             <button @click="editcar" class="px-3 mr-3 h-7 font-base text-sm flex flex-row justify-center items-center tracking-wider uppercase
+             <button class="px-3 mr-3 h-7 font-base text-sm flex flex-row justify-center items-center tracking-wider uppercase
               text-white rounded-lg shadow-xl 
              transition duration-500 ease-in-out transform bg-gradient-to-r from-dark to-red-600 hover:from-red-600 hover:to-dark
              hover:-translate-y-1 hover:scale-110 focus:ring focus:outline-none">
-               EDIT
+             <router-link :to="{ path: 'add', query: { productid: product.productid }}">
+              EDIT
+            </router-link>
              </button>
              <button @click="deletecar" class="px-3  h-7 font-base text-sm text-center flex flex-row justify-center items-center tracking-wider uppercase text-white rounded-lg shadow-xl 
              transition duration-500 ease-in-out transform bg-gradient-to-l from-dark hover:from-red-600 to-red-600 hover:to-dark
