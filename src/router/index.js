@@ -20,9 +20,10 @@ const routes = [
   }
   ,
   {
-    path: '/add',
+    path: '/add/:productid',
     name: 'Add',
-    component: Add
+    component: Add,
+    props: true,
   },
   {
     path: '/store',
@@ -30,7 +31,7 @@ const routes = [
     component: Store
   }
 ]
-
+//:catchAll(.*) 404
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes

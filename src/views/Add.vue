@@ -2,7 +2,7 @@
     <div class="add font-serif font-light ">
         <div class="px-56">
             <div class="px-20  bg-white bg-opacity-80 ">
-                <h1 class="font-base text-4xl text-center py-5 text-gray-800">Add Carsgit </h1>
+                <h1 class="font-base text-4xl text-center py-5 text-gray-800">Add Carsgit {{productid}}</h1>
                 <div class="items-center flex flex-col  w-full ">
                     <img class="object-cover object-center" alt="addcar" src="../assets/home/add.png">
                     <input type="file" class="focus:outline-none" @change="uploadImg" />
@@ -49,3 +49,8 @@
         </div>
     </div>
 </template>
+<script>
+export default {
+  props: ["productid"],
+};
+</script>

@@ -30,14 +30,14 @@
              </div>
            </div>
            <div class=" flex flex-row justify-end items-center self-center p-5 w-full">
-             <button class="px-3 mr-3 h-7 font-base text-sm flex flex-row justify-center items-center tracking-wider uppercase
+            <router-link :to="'/add/'+product.productid">
+            <button class="px-3 mr-3 h-7 font-base text-sm flex flex-row justify-center items-center tracking-wider uppercase
               text-white rounded-lg shadow-xl 
              transition duration-500 ease-in-out transform bg-gradient-to-r from-dark to-red-600 hover:from-red-600 hover:to-dark
              hover:-translate-y-1 hover:scale-110 focus:ring focus:outline-none">
-             <router-link :to="{ path: 'add', query: { productid: product.productid }}">
               EDIT
-            </router-link>
              </button>
+            </router-link>
              <button @click="deletecar" class="px-3  h-7 font-base text-sm text-center flex flex-row justify-center items-center tracking-wider uppercase text-white rounded-lg shadow-xl 
              transition duration-500 ease-in-out transform bg-gradient-to-l from-dark hover:from-red-600 to-red-600 hover:to-dark
              hover:-translate-y-1 hover:scale-110 focus:ring focus:outline-none">
