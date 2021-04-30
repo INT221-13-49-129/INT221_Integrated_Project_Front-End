@@ -1,7 +1,7 @@
 <template>
     <div class="add font-serif font-light antialiased">
         <div class="px-56">
-            <div class="px-20 bg-white bg-opacity-80">
+            <div class="px-20 bg-white bg-opacity-80 mt-10">
                 <h1 class="font-base text-4xl text-center py-5 text-gray-800">Add Cars {{ productid }}</h1>
                 <div class="items-center flex flex-col w-full">
                     <img
@@ -178,6 +178,23 @@ export default {
         };
     },
     methods: {
+        clear(){
+            this.product = {
+                productid: 0,
+                productname: '',
+                power: '',
+                torque: '',
+                weight: '',
+                transmission: '',
+                yom: '',
+                description: '',
+                brand: {
+                    brandid: 0,
+                    brandname: ''
+                },
+                colorList:[]
+            }
+        },
         validateFrom(){
             this.validate.name = this.product.productname != ''
             this.validate.power = this.product.power != '' && this.product.power > 0
@@ -189,11 +206,9 @@ export default {
             this.validate.brand = this.product.brand.brandid != 0 
             this.validate.color = this.product.colorList.length != 0 
             this.validate.from = true
-            console.log(this.product.colorList ); 
             Object.values(this.validate).forEach( v => {
                 this.validate.from = v && this.validate.from
             });
-            console.log(this.validate.from); 
         },
         selectColor(color){
             if(this.product.colorList.map(c => c.colorid).includes(color.colorid)){
@@ -223,6 +238,12 @@ export default {
         }else if(this.productid != 'add'){
             this.$router.push('/404')
         }
-    },
+    },watch : {
+        productid:function productidCheck() {
+            if(this.productid == 'add'){
+                this.clear()
+            }
+        } 
+    }
 };
 </script>
