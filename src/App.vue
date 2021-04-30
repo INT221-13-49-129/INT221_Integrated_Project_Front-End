@@ -43,7 +43,7 @@
       <router-view />
     </div>
     <footer
-      class="pt-5 px-3 bg-black bg-opacity-90 shadow-2xl text-gray-500 font-sans text-right flex flex-row ">
+      class="pt-5 mt-10 px-3 bg-black bg-opacity-90 shadow-2xl text-gray-500 font-sans text-right flex flex-row ">
       <div class="text-left pb-5 pl-5 items-start">
         <p class="text-gray-400">INT221 Integrated Information Technology Project I 2/2563</p>
         <p class=" font-light ">Bachelor of Science Program in Information Technology (B.Sc.IT)</p>
