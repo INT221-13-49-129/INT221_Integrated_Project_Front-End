@@ -1,0 +1,12 @@
+<template>
+   <div class="show font-serif fixed font-light bg-opacity-20 bg-white flex justify-center items-center  z-20 inset-0 overflow-y-auto overflow-x-auto">
+     <div :class="classpop">
+      <slot></slot>
+    </div>
+  </div>
+</template>
+<script>
+export default {
+  props: [ 'classpop' ]
+}
+</script>

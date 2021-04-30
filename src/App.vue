@@ -26,7 +26,7 @@
             </router-link>
           </li>
           <li class="px-4">
-            <router-link to="/add">
+            <router-link to="/info/add">
               <span><b>Add-Car</b></span>
             </router-link>
           </li>

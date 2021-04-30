@@ -30,7 +30,7 @@
              </div>
            </div>
            <div class=" flex flex-row justify-end items-center self-center p-5 w-full">
-            <router-link :to="'/add/'+product.productid">
+            <router-link :to="'/info/'+product.productid">
             <button class="px-3 mr-3 h-7 font-base text-sm flex flex-row justify-center items-center tracking-wider uppercase
               text-white rounded-lg shadow-xl 
              transition duration-500 ease-in-out transform bg-gradient-to-r from-dark to-red-600 hover:from-red-600 hover:to-dark

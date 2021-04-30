@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
-import Store from '../views/Store.vue'
-import Add from '../views/Add.vue'
+import Store from '../views/Store.vue' 
+import NotFound from '../views/NotFound.vue'
+import Information from '../views/Information.vue'
 
 
 const routes = [
@@ -20,18 +21,22 @@ const routes = [
   }
   ,
   {
-    path: '/add/:productid',
-    name: 'Add',
-    component: Add,
+    path: '/info/:productid',
+    name: 'Information',
+    component: Information,
     props: true,
   },
   {
     path: '/store',
     name: 'Store',
     component: Store
+  },
+  {
+    path: '/:catchAll(.*)',
+    name: 'NotFound',
+    component: NotFound
   }
 ]
-//:catchAll(.*) 404
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes

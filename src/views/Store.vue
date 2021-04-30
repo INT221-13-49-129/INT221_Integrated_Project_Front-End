@@ -36,7 +36,7 @@
     </div>
 
     <div class="store flex flex-row border-b-2 mb-1.5 border-white">
-      <router-link to="/add">
+      <router-link to="/info/add">
         <button
           class="my-4 px-3 py-1 text-lg font-thin  bg-gray-200 rounded-lg text-gray-800 "
         >+ ADD CAR</button>
@@ -45,7 +45,7 @@
       <div class="mt-5 mr-1">
         <span class="text-white text-base">Brand :</span>
         <select class="bg-opacity-5 h-6 w-auto text-black" v-model="brandSelected" @change="brandfilter(brandSelected)">
-          <option value>All</option>
+          <option value="">All</option>
           <option
             v-for=" brand in brandAll"
             :key="brand.brandid"
