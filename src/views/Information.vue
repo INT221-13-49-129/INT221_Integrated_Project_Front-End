@@ -3,13 +3,16 @@
         <div class="px-56">
             <div class="px-20 bg-white shadow-2xl">
                 <h1 class=" font-bold text-4xl text-center py-5 text-gray-800 ">{{ productid }}</h1>
+                
                 <div class="items-center flex flex-col w-full">
+                    <div class=" border-gray-300 border-4 border-dashed p-2 flex justify-center items-center">
                     <img
                         class="object-cover object-center"
                         alt="addcar"
                         src="../assets/home/add.png"
                     />
-                    <input type="file" class="focus:outline-none" @change="uploadImg" />
+                    </div>
+                    <input type="file" class="focus:outline-none mt-3 w-full" @change="uploadImg" />
                 </div>
                 <div class="flex flex-row flex-wrap justify-center items-center">
                     <div v-for="color in product.colorList" :key="color.colorid" class="h-11 w-11 rounded-full border-black border-2 hover:shadow-lg mx-2 mt-2" v-bind:style="{ backgroundColor: color.colorcode }"></div>
