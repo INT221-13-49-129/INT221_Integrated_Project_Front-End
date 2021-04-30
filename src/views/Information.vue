@@ -1,8 +1,8 @@
 <template>
     <div class="add font-serif font-light antialiased">
         <div class="px-56">
-            <div class="px-20 bg-white bg-opacity-80 mt-10">
-                <h1 class="font-base text-4xl text-center py-5 text-gray-800">Add Cars {{ productid }}</h1>
+            <div class="px-20 bg-white mt-10">
+                <h1 class="font-base text-4xl text-center py-5 text-gray-800">{{ productid }}</h1>
                 <div class="items-center flex flex-col w-full">
                     <img
                         class="object-cover object-center"
@@ -55,13 +55,13 @@
                         <br />
                         <input id="name" :class="{'bg-red-200 bg-opacity-5 border-red-400 border-2':!validate.name&&!validate.from}" @keyup="validate.name = product.productname != ''"
                             v-model="product.productname"
-                            class="flex-grow mr-4 ml-2 rounded-md shadow-inner w-full bg-white bg-opacity-50 h-10"
+                            class="flex-grow mr-4 ml-2 rounded-md shadow-inner w-full bg-white bg-opacity-50 h-10 border-gray-100 border-2"
                         />
                     </div>
                     <div class="text-lg mt-2">
                         <label class="shadow-xl" for="brand">BRAND : </label><span class="text-red-600" v-show="!validate.brand&&!validate.from"> Please select a brand!</span>
                         <br />
-                        <select id="brand" class="flex-grow mr-4 ml-2 rounded-md shadow-inner w-full bg-white bg-opacity-50 h-10" v-model="product.brand" :class="{'bg-red-200 bg-opacity-5 border-red-400 border-2':!validate.brand&&!validate.from}" @change="validate.brand = product.brand.brandid != 0 ">
+                        <select id="brand" class="flex-grow mr-4 ml-2 rounded-md shadow-inner w-full bg-white bg-opacity-50 h-10 border-gray-100 border-2" v-model="product.brand" :class="{'bg-red-200 bg-opacity-5 border-red-400 border-2':!validate.brand&&!validate.from}" @change="validate.brand = product.brand.brandid != 0 ">
                             <option
                               v-for=" brand in brandAll"
                               :key="brand.brandid"
@@ -75,7 +75,7 @@
                         <input id="power" :class="{'bg-red-200 bg-opacity-5 border-red-400 border-2':!validate.power&&!validate.from}" @blur="validate.power = product.power != '' && product.power > 0" @keyup="validate.power = product.power != '' && product.power > 0"
                             v-model="product.power"
                             type="number"
-                            class="flex-grow mr-4 ml-2 rounded-md shadow-inner w-full bg-white bg-opacity-50 h-10"
+                            class="flex-grow mr-4 ml-2 rounded-md shadow-inner w-full bg-white bg-opacity-50 h-10  border-gray-100 border-2"
                         />
                     </div>
                     <div class="text-lg mt-2">
@@ -84,7 +84,7 @@
                         <input id="torque" :class="{'bg-red-200 bg-opacity-5 border-red-400 border-2':!validate.torque&&!validate.from}" @blur="validate.torque = product.torque != '' && product.torque > 0" @keyup="validate.torque = product.torque != '' && product.torque > 0"
                             v-model="product.torque"
                             type="number"
-                            class="flex-grow mr-4 ml-2 rounded-md shadow-inner w-full bg-white bg-opacity-50 h-10"
+                            class="flex-grow mr-4 ml-2 rounded-md shadow-inner w-full bg-white bg-opacity-50 h-10 border-gray-100 border-2"
                         />
                     </div>
                     <div class="text-lg mt-2" >
@@ -93,7 +93,7 @@
                         <input id="weight" :class="{'bg-red-200 bg-opacity-5 border-red-400 border-2':!validate.weight&&!validate.from}" @blur="validate.weight = product.weight != '' && product.weight > 0" @keyup="validate.weight = product.weight != '' && product.weight > 0"
                             v-model="product.weight"
                             type="number"
-                            class="flex-grow mr-4 ml-2 rounded-md shadow-inner w-full bg-white bg-opacity-50 h-10"
+                            class="flex-grow mr-4 ml-2 rounded-md shadow-inner w-full bg-white bg-opacity-50 h-10 border-gray-100 border-2"
                         />
                     </div>
                     <div class="text-lg mt-2">
@@ -101,7 +101,7 @@
                         <br />
                         <input id="transmission" :class="{'bg-red-200 bg-opacity-5 border-red-400 border-2':!validate.transmission&&!validate.from}"  @keyup="validate.transmission = product.transmission != ''"
                             v-model="product.transmission"
-                            class="flex-grow mr-4 ml-2 rounded-md shadow-inner w-full bg-white bg-opacity-50 h-10"
+                            class="flex-grow mr-4 ml-2 rounded-md shadow-inner w-full bg-white bg-opacity-50 h-10 border-gray-100 border-2"
                         />
                     </div>
                     <div class="text-lg mt-2">
@@ -110,7 +110,7 @@
                         <input id="yom" :class="{'bg-red-200 bg-opacity-5 border-red-400 border-2':!validate.yom&&!validate.from}" @change="validate.yom = product.yom != ''"
                             v-model="product.yom"
                             type="date"
-                            class="flex-grow mr-4 ml-2 rounded-md shadow-inner w-full bg-white bg-opacity-50 h-10"
+                            class="flex-grow mr-4 ml-2 rounded-md shadow-inner w-full bg-white bg-opacity-50 h-10 border-gray-100 border-2"
                         />
                     </div>
                     <div class="text-lg mt-2">
@@ -118,7 +118,7 @@
                         <br />
                         <textarea  id="description" :class="{'bg-red-200 bg-opacity-5 border-red-400 border-2':!validate.description&&!validate.from}" @keyup="validate.description = product.description != ''"
                             v-model="product.description"
-                            class="flex-grow mr-4 ml-2 rounded-md shadow-inner h-20 w-full bg-white bg-opacity-50"
+                            class="flex-grow mr-4 ml-2 rounded-md shadow-inner h-24 w-full bg-white bg-opacity-50 border-gray-100 border-2"
                         ></textarea>
                     </div>
                     <div class="flex flex-row justify-center pt-16 pb-28">
