@@ -1,21 +1,21 @@
 <template>
   <div id
-    class="flex flex-col font-serif antialiased bg-gradient-to-br from-dark to-red-600 min-h-screen xl:w-full w-336">
-    <div id="nav" class=" w-full h-12  shadow-2xl bg-black ">
-      <div class="mx-auto flex flex-row item-center w-320">
-        <div class="w-4/12">
+    class="flex flex-col font-serif antialiased bg-gradient-to-br from-dark to-red-600 min-h-screen xl:w-full md:w-336 w-screen ">
+    <div id="nav" class="w-full h-12  shadow-2xl bg-black ">
+      <div class="md:mx-auto flex flex-row item-center  md:w-320">
+        <div class="md:w-4/12">
           <router-link to="/">
             <img :src="logo" class="my-1.5 ml-1 h-9" />
           </router-link>
         </div>
-        <ul class="text-white flex-grow text-center">
-          <li class="px-10 py-1.5 font-light text-3xl">
+        <ul class="text-white md:flex-grow text-center">
+          <li class="px-10 py-1.5 font-light  text-3xl">
             <router-link to="/">
               <span><b>CARS</b></span>
             </router-link>
           </li>
         </ul>
-        <ul class="my-auto flex flex-row justify-end h-full text-white font-thin text-lm w-4/12">
+        <ul class="my-auto flex flex-row justify-end h-full text-white font-thin text-lm md:w-4/12">
           <li class="px-4">
             <router-link to="/">
               <span><b>Home</b></span>
@@ -39,24 +39,24 @@
         </ul>
       </div>
     </div>
-    <div class="w-320 mx-auto bgimge flex-grow">
+    <div class="w-full md:w-320 mx-auto bgimge flex-grow">
       <router-view />
     </div>
     <footer
       class="pt-5 mt-10 px-3 bg-black bg-opacity-90 shadow-2xl text-gray-500 font-sans text-right flex flex-row ">
-      <div class="w-320 mx-auto">
-      <div class="text-left pb-5 pl-5 items-start">
+      <div class="w-full md:w-320 mx-auto">
+      <div class="text-center md:text-left pb-5 md:pl-5 mx-auto">
         <p class="text-gray-400">INT221 Integrated Information Technology Project I 2/2563</p>
         <p class=" font-light ">Bachelor of Science Program in Information Technology (B.Sc.IT)</p>
-        <div class="flex flex-row text-center divide-x-2 pt-2 -ml-6">
+        <div class="flex flex-row text-center divide-x-2 pt-2 justify-center md:justify-start md:-ml-6">
           <div class="flex flex-col w-40 border-gray-500 border-dashed"><p class=" font-light  "> Kamin Tohpradu </p><p class=" font-light text-sm "> -- 62130500013 --</p></div>
           <div class="flex flex-col w-40 border-gray-500 border-dashed"><p class=" font-light  "> Patiphan Thiansuwan  </p><p class=" font-light text-sm "> -- 62130500049 --</p></div>
           <div class="flex flex-col w-40 border-gray-500 border-dashed"><p class=" font-light  "> Priyanut Buadum </p><p class=" font-light text-sm "> -- 62130500129 --</p></div>
         
        </div>
       </div>
-      <div class="flex items-end justify-end  ">
-        <p class="-mt-5 mb-4 font-thin text-xs text-right ">Copyright <span @click="logo=require('./assets/logoCarPin.png')">©</span> 2021 King Mongkut’s University of Technology
+      <div class="flex items-end md:justify-end  justify-center">
+        <p class="md:-mt-5 mb-4 font-thin text-xs text-right ">Copyright <span @click="logo=require('./assets/logoCarPin.png')">©</span> 2021 King Mongkut’s University of Technology
           Thonburi, All rights reserved.</p>
       </div>
     </div>
