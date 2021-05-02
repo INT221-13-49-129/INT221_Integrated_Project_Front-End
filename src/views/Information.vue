@@ -8,7 +8,7 @@
                     <img
                         class="object-cover object-center"
                         alt="addcar"
-                        src="../assets/home/add.png"
+                        :src="img.url"
                     />
                     </div>
                     <input type="file" class="focus:outline-none mt-3 w-full" @change="uploadImg" />
@@ -150,6 +150,8 @@ export default {
             urlColor: "http://localhost:3000/color",
             urlProduct: "http://localhost:3000/product",
             urlbrand: "http://localhost:3000/brand",
+            urlImg:"http://localhost:3000/img",
+            img:{url:require("../assets/home/add.png")},
             product: {
                 productid: 0,
                 productname: '',
@@ -195,7 +197,8 @@ export default {
                     brandname: ''
                 },
                 colorList:[]
-            }
+            };
+            this.img={url:require("../assets/home/add.png")}
         },
         validateFrom(){
             this.validate.name = this.product.productname != ''
@@ -234,7 +237,9 @@ export default {
         this.colorList = await this.fetch(this.urlColor)
         if(!isNaN(this.productid)){
             this.product = await this.fetch(this.urlProduct+'/'+this.productid)
-            if(this.product.errorStatus == 1001 ){
+            if(this.product.errorStatus != 1001 ){
+                this.img = await fetch(this.urlImg+"/"+this.product.img)
+            }else{
                 this.$router.push('/404')
             }
         }else if(this.productid != 'add'){

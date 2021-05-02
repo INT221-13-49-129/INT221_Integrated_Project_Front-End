@@ -21,7 +21,7 @@
     <div class="flex justify-center item-center w-1/2">
       <img src="../assets/cchom.png" />
     </div>
-    <div class="w-1/2 container flex flex-col pl-10">
+    <div class="w-1/2 container flex flex-col pl-10 text-center">
       <div class="text-xl text-white py-2 font-medium">นางสาว ปรียานุช บัวดำ</div>
       <div class="text-xl text-white py-2">Priyanut Buadum</div>
       <div class="text-xl text-white py-2 mx-5">ฝ่ายงานที่รับผิดชอบ</div>

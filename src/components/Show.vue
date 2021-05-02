@@ -4,7 +4,7 @@
        <div class="w-7/12 bgsvg bg-no-repeat bg-center">
         <div class="text-5xl font-extrabold text-right mt-10 truncate">{{product.productname}}</div>
          <div class="flex flex-row justify-center items-center ">         
-           <img class="object-contain object-center -mt-20" alt="addcar" src="../assets/home/30129.png">
+           <img class="object-contain object-center -mt-20" alt="addcar" :src="img.url">
          </div>
          <div class="flex flex-row justify-center items-center ">
            <div v-for="color in product.colorList" :key="color.colorid" class="w-9 h-9 rounded-full border-black border-2 hover:shadow-lg mx-2" v-bind:style="{ backgroundColor: color.colorcode }"></div>
@@ -60,6 +60,15 @@ export default {
   name: 'Show',
   props: [
     "product",
-  ]
+  ],
+  data() {
+    return {
+      img:"",
+      urlImg:"http://localhost:3000/img"
+    };
+  },
+  async created() {
+    this.img = await fetch(this.urlImg+"/"+this.product.img)
+  },
 }
 </script>
