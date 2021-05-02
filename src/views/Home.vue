@@ -68,9 +68,13 @@
                   <div class="text-2xl -mt-16 font-thin ">WEIGHT</div>
                 </div>
               </div>
+              <div class="w-full flex justify-center">
+                <span @click="random()" class="material-icons mt-2 text-4xl cursor-pointer">
+                cached
+                </span></div>
               <router-link to="/store" class="mx-auto ">
                 <button
-                  class="px-14 py-2 mt-14 font-thin text-white transition duration-500 ease-in-out transform shadow-xl bg-gradient-to-t from-gray-900 hover:from-gray-600 to-gray-600 hover:to-gray-900 hover:-translate-y-1 hover:scale-110 focus:ring focus:outline-none">MORE</button>
+                  class="px-14 py-2 mt-4 font-thin text-white transition duration-500 ease-in-out transform shadow-xl bg-gradient-to-t from-gray-900 hover:from-gray-600 to-gray-600 hover:to-gray-900 hover:-translate-y-1 hover:scale-110 focus:ring focus:outline-none">MORE</button>
               </router-link>
             </div>
           </div>
@@ -160,6 +164,11 @@
       };
     },
     methods: {
+      async random(){
+        this.productRand = []
+        const rendnum = await this.fetch(this.url + '/count')
+        this.setProductRand(rendnum)
+      },
       nextBg(i) {
         this.imgShow += i;
         if (this.imgShow == -1) {
@@ -192,8 +201,7 @@
       }
     },
     async created() {
-      const rendnum = await this.fetch(this.url + '/count')
-      this.setProductRand(rendnum)
+      this.random();
     },
   }
 </script>

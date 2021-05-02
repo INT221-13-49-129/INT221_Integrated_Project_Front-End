@@ -38,7 +38,6 @@ export default {
   },
   async created() {
     this.img = await fetch(this.urlImg+"/"+this.product.img)
-    console.log(this.img.url);
   },
 }
 </script>

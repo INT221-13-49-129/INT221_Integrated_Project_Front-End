@@ -5,7 +5,7 @@
       <div class="mx-auto flex flex-row item-center w-320">
         <div class="w-4/12">
           <router-link to="/">
-            <img src="./assets/logoCar.png" class="mt-1 w-10" />
+            <img :src="logo" class="my-2 h-9" />
           </router-link>
         </div>
         <ul class="text-white flex-grow text-center">
@@ -44,17 +44,22 @@
     </div>
     <footer
       class="pt-5 mt-10 px-3 bg-black bg-opacity-90 shadow-2xl text-gray-500 font-sans text-right flex flex-row ">
+      <div class="w-320 mx-auto">
       <div class="text-left pb-5 pl-5 items-start">
         <p class="text-gray-400">INT221 Integrated Information Technology Project I 2/2563</p>
         <p class=" font-light ">Bachelor of Science Program in Information Technology (B.Sc.IT)</p>
-        <p class=" font-light  ">|| Kamin Tohpradu || Patiphan Thiansuwan || Priyanut Buadum || </p>
-        <p class=" font-light text-sm ">|| -- 62130500013 --||----- 62130500049 ----||-- 62130500129 ---||</p>
+        <div class="flex flex-row text-center divide-x-2 pt-2 -ml-6">
+          <div class="flex flex-col w-40 border-gray-500 border-dashed"><p class=" font-light  "> Kamin Tohpradu </p><p class=" font-light text-sm "> -- 62130500013 --</p></div>
+          <div class="flex flex-col w-40 border-gray-500 border-dashed"><p class=" font-light  "> Patiphan Thiansuwan  </p><p class=" font-light text-sm "> -- 62130500049 --</p></div>
+          <div class="flex flex-col w-40 border-gray-500 border-dashed"><p class=" font-light  "> Priyanut Buadum </p><p class=" font-light text-sm "> -- 62130500129 --</p></div>
+        
+       </div>
       </div>
-      <div class="flex-grow"></div>
       <div class="flex items-end justify-end  ">
-        <p class="mt-4 mb-2 font-thin text-xs text-right ">Copyright © 2021 King Mongkut’s University of Technology
+        <p class="-mt-5 mb-4 font-thin text-xs text-right ">Copyright <span @click="logo=require('./assets/logoCarPin.png')">©</span> 2021 King Mongkut’s University of Technology
           Thonburi, All rights reserved.</p>
       </div>
+    </div>
     </footer>
   </div>
 </template>
@@ -65,3 +70,12 @@
     background-image: url("./assets/Tire.png");
   }
 </style>
+<script>
+export default {
+  data() {
+    return {
+      logo:require("./assets/logoCar.png"),
+    };
+  }
+}
+</script>
