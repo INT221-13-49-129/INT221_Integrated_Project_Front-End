@@ -5,7 +5,7 @@
       <div class="mx-auto flex flex-row item-center w-320">
         <div class="w-4/12">
           <router-link to="/">
-            <img :src="logo" class="my-2 h-9" />
+            <img :src="logo" class="my-1.5 ml-1 h-9" />
           </router-link>
         </div>
         <ul class="text-white flex-grow text-center">

@@ -47,7 +47,7 @@
               <div @mouseover="prodshowhover = false" @mouseleave="prodshowhover = true" class="flex flex-row justify-center items-center pt-5 mt-4 ">
                 <div v-for="pro in productRand" :key="pro.productid" @click="productCurrent = pro"
                   :class="{'scale-125 opacity-100': pro.productid==productCurrent.productid}"
-                  class="bg-white w-80 bg-opacity-90 opacity-60 hover:opacity-100 shadow-xl pb-3 mx-11 transition duration-150 ease-in-out transform hover:-translate-y-1 hover:scale-125 focus:ring focus:outline-none">
+                  class="bg-white w-72 bg-opacity-90 opacity-60 hover:opacity-100 shadow-xl pb-3 mx-14 transition duration-150 ease-in-out transform hover:-translate-y-1 hover:scale-125 focus:ring focus:outline-none">
                   <base-product :product="pro" :descrip="true" class-text="text-center text-sm font-thin"
                     class-text-name="text-xl font-medium text-gray-900" class-div="flex flex-col items-center" class-img="w-10/12">
                   </base-product>
