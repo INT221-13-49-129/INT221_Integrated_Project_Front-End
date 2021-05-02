@@ -39,7 +39,7 @@
         </ul>
       </div>
     </div>
-    <div class="w-full md:w-320 px-5 md:mx-auto bgimge flex-grow">
+    <div class="w-full md:w-320 px-5 md:px-0 md:mx-auto bgimge flex-grow">
       <router-view />
     </div>
     <footer
