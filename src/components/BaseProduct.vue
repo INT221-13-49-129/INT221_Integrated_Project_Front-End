@@ -1,6 +1,6 @@
 <template>
   <div :class="classDiv">
-    <img src="../assets/home/30129.png" :class="classImg" />
+    <img :src="img.url" :class="classImg" />
     <div :class="classText">
       <div :class="classTextName">{{ product.productname }}</div>
       <div>Brand : {{ product.brand.brandname }}</div>
@@ -29,7 +29,17 @@ export default {
     "power",
     "torque",
     "weight"
-  ]
+  ],
+  data() {
+    return {
+      img:"",
+      urlImg:"http://localhost:3000/img"
+    };
+  },
+  async created() {
+    this.img = await fetch(this.urlImg+"/"+this.product.img)
+    console.log(this.img.url);
+  },
 }
 </script>
 
