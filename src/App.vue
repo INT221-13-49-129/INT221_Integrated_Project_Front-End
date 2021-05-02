@@ -1,6 +1,7 @@
 <template>
-  <div id class="flex flex-col  bg-gradient-to-br from-dark to-red-600 min-h-screen xl:w-full w-336">
-    <div id="nav" class=" w-full h-12 font-serif shadow-2xl bg-black ">
+  <div id
+    class="flex flex-col font-serif antialiased bg-gradient-to-br from-dark to-red-600 min-h-screen xl:w-full w-336">
+    <div id="nav" class=" w-full h-12  shadow-2xl bg-black ">
       <div class="mx-auto flex flex-row item-center w-320">
         <div class="w-4/12">
           <router-link to="/">
@@ -10,7 +11,7 @@
         <ul class="text-white flex-grow text-center">
           <li class="px-10 py-1.5 font-light text-3xl">
             <router-link to="/">
-            <span><b>CARS</b></span>
+              <span><b>CARS</b></span>
             </router-link>
           </li>
         </ul>
@@ -41,14 +42,26 @@
     <div class="w-320 mx-auto bgimge flex-grow">
       <router-view />
     </div>
-    <footer class="pt-5 mt-10 bg-black bg-opacity-90 shadow-2xl">
-      
+    <footer
+      class="pt-5 mt-10 px-3 bg-black bg-opacity-90 shadow-2xl text-gray-500 font-sans text-right flex flex-row ">
+      <div class="text-left pb-5 pl-5 items-start">
+        <p class="text-gray-400">INT221 Integrated Information Technology Project I 2/2563</p>
+        <p class=" font-light ">Bachelor of Science Program in Information Technology (B.Sc.IT)</p>
+        <p class=" font-light  ">|| Kamin Tohpradu || Patiphan Thiansuwan || Priyanut Buadum || </p>
+        <p class=" font-light text-sm ">|| -- 62130500013 --||----- 62130500049 ----||-- 62130500129 ---||</p>
+      </div>
+      <div class="flex-grow"></div>
+      <div class="flex items-end justify-end  ">
+        <p class="mt-4 mb-2 font-thin text-xs text-right ">Copyright © 2021 King Mongkut’s University of Technology
+          Thonburi, All rights reserved.</p>
+      </div>
     </footer>
   </div>
 </template>
 <style>
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
-.bgimge {
-  background-image: url("./assets/Tire.png");
-}
+  @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+  .bgimge {
+    background-image: url("./assets/Tire.png");
+  }
 </style>

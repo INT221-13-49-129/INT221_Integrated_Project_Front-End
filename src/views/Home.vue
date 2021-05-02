@@ -137,7 +137,7 @@
             img: require("../assets/home/bg4.jpg")
           },
           {
-            img: require("../assets/home/bg5.webp")
+            img: require("../assets/home/bg5.png")
           },
           {
             img: require("../assets/home/bg6.jpg")
