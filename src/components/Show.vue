@@ -1,6 +1,11 @@
  <template>
-   <div class="show font-serif fixed font-light bg-opacity-20 bg-white flex justify-center items-center  z-20 inset-0 overflow-y-auto overflow-x-auto">
-     <div class=" w-320 h-128 bg-opacity-90 bg-gray-100 mb-5 flex flex-row rounded-xl fixed ">
+   <div class="show font-serif fixed font-light bg-opacity-10 bg-black flex justify-center items-center  z-20 inset-0 overflow-y-auto overflow-x-auto">
+     <div class=" w-320 h-128 bg-opacity-95 bg-gray-100 mb-5 flex flex-row rounded-xl fixed">
+      <base-popup v-if="popupShow" classpop="flex flex-col justify-center w-144 h-80  bg-gray-100  rounded-xl fixed shadow-2xl">
+      <div class="flex flex-col justify-center items-center">
+
+      </div>
+      </base-popup>
        <div class="w-7/12 bgsvg bg-no-repeat bg-center">
         <div class="text-5xl font-extrabold text-right mt-10 truncate">{{product.productname}}</div>
          <div class="flex flex-row justify-center items-center ">         
@@ -63,6 +68,7 @@ export default {
   ],
   data() {
     return {
+      popupShow:false,
       img:"",
       urlImg:"http://localhost:3000/img"
     };

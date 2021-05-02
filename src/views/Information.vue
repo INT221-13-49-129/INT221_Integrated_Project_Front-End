@@ -21,7 +21,7 @@
                 </div>
                 <div v-if="colorListShow">
                     <base-popup
-                        classpop="flex flex-col justify-center w-144 h-128 bg-opacity-90 bg-gray-100  rounded-xl fixed"
+                        classpop="flex flex-col justify-center w-144 h-128 bg-opacity-95 bg-gray-100  rounded-xl fixed"
                     >
                         <div class="text-center text-4xl mt-4">Color List</div>
                         <div class="flex flex-row flex-wrap mx-3 my-1 py-3 overflow-auto h-96">
