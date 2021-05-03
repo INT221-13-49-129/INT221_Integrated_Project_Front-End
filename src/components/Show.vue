@@ -1,7 +1,7 @@
  <template>
    <div
      class="show font-serif fixed font-light bg-opacity-10 bg-black flex justify-center items-center  z-20 inset-0 overflow-y-auto overflow-x-auto">
-     <div class=" w-11/12 h-auto bg-opacity-95 bg-gray-100 mb-5 flex md:flex-row flex-col rounded-xl fixed">
+     <div class=" md:w-320 w-11/12 md:h-144 h-auto bg-opacity-95 bg-gray-100 mb-5 flex md:flex-row flex-col rounded-xl fixed">
        <base-popup v-if="popupShow"
          classpop="flex flex-col justify-center h-60 bg-gray-100  rounded-md fixed shadow-2xl md:mx-0 mx-7">
          <div class="flex flex-col justify-center text-center mx-12 ">
@@ -19,7 +19,7 @@
            </div>
          </div>
        </base-popup>
-       <div class="md:w-7/12 w-full bgsvg bg-no-repeat bg-center">
+       <div class="md:w-7/12 md:pt-6 w-full bgsvg bg-no-repeat bg-center">
          <div class="md:text-5xl text-3xl font-extrabold text-right md:mt-10 mt-3 mr-10  truncate">{{product.productname}}</div>
          <div class="flex flex-row justify-center items-center ">
            <img class="object-contain object-center md:mb-4 -mt-12 md:h-96 h-2/6 " alt="Car product" :src="img.url">
