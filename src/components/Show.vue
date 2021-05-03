@@ -4,10 +4,10 @@
      <div class=" w-11/12 h-auto bg-opacity-95 bg-gray-100 mb-5 flex md:flex-row flex-col rounded-xl fixed">
        <base-popup v-if="popupShow"
          classpop="flex flex-col justify-center h-60 bg-gray-100  rounded-md fixed shadow-2xl md:mx-0 mx-7">
-         <div class="flex flex-col justify-center text-center mx-12">
-           <p class="text-xl md:text-2xl text-gray-900 font-medium ">Confirm to delete <span
+         <div class="flex flex-col justify-center text-center mx-12 ">
+           <p class="text-lg md:text-2xl text-gray-900 font-medium ">Confirm to delete <span
                class="text-red-600 font-semibold">{{product.productid}} {{product.productname}}</span></p>
-           <p class="text-base md:text-xl text-gray-600 font-medium mt-6">Are you sure to delete the <span
+           <p class="text-sm md:text-xl text-gray-600 font-medium mt-6">Are you sure to delete the <span
                class="text-red-600 font-semibold">{{product.productid}} {{product.productname}}</span> cars?</p>
            <div class="flex flex-row justify-center text-2xl mt-8 space-x-24">
              <div @click="popupShow=false"
