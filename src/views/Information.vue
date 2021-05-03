@@ -16,7 +16,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex md:flex-row flex-col flex-wrap justify-center items-center">
+                <div class="flex flex-row flex-wrap justify-center items-center">
                     <div v-for="color in product.colorList" :key="color.colorid"
                         class="md:h-11 md:w-11 h-7 w-7 rounded-full border-black border-2 hover:shadow-lg mx-2 mt-2"
                         v-bind:style="{ backgroundColor: color.colorcode }"></div>
