@@ -7,9 +7,9 @@
         class="p-3 md:p-5 ml-2 rounded-full bg-black w-4  h-4 flex justify-center items-center opacity-30 hover:opacity-100 cursor-pointer">
         <span @click="nextBg(-1)" class="material-icons ml-2 text-lg md:text-2xl font-thin md:font-extralight ">arrow_back_ios</span></div>
       <div class="w-3/12 md:w-1/2 h-5/6 mx-3 md:ml-28 -mt-32 flex-grow">
-        <p class="font-thin text-3xl italic tracking-wider pt-20 ">Lamborghini</p>
-        <p class="font-medium text-5xl md:text-7xl tracking-wider pt-2 ">OWNERSHIP</p>
-        <p class="font-thin antialiased tracking-wider mt-10 w-full md:w-1/2 ">Automobili Lamborghini is pleased to offer an
+        <p class="text-sm md:text-3xl font-thin tracking-wider pt-20 italic">Lamborghini</p>
+        <p class="text-2xl md:text-7xl font-medium tracking-wider pt-2 ">OWNERSHIP</p>
+        <p class="text-xs md:text-base font-thin tracking-wider mt-10 w-full md:w-1/2 ">Automobili Lamborghini is pleased to offer an
           attentive service thatmeets all the needs of our customers.</p>
         <div class="mt-12">
           <router-link to="/store">

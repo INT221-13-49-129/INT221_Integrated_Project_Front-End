@@ -45,8 +45,8 @@
     <footer
       class="pt-5 mt-10 px-3 bg-black bg-opacity-90 shadow-2xl text-gray-500 font-sans text-right flex flex-row ">
       <div class="w-full md:w-320 mx-auto">
-      <div class="text-center md:text-left pb-5 md:pl-5 mx-auto">
-        <p class="text-gray-400">INT221 Integrated Information Technology Project I 2/2563</p>
+      <div class="text-center md:text-left pb-5 md:pl-5 mx-auto text-xs md:text-base">
+        <p class="text-gray-400 ">INT221 Integrated Information Technology Project I 2/2563</p>
         <p class=" font-light ">Bachelor of Science Program in Information Technology (B.Sc.IT)</p>
         <div class="flex flex-row text-center divide-x-2 pt-2 justify-center md:justify-start md:-ml-6">
           <div class="flex flex-col w-40 border-gray-500 border-dashed"><p class=" font-light  "> Kamin Tohpradu </p><p class=" font-light text-sm "> -- 62130500013 --</p></div>
