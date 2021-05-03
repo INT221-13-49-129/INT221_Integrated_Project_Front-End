@@ -125,10 +125,15 @@
                         <label class="shadow-xl" for="transmission">DRIVERTRAIN :</label><span class="text-red-600"
                             v-show="!validate.transmission&&!validate.from"> Please enter drivetrain!</span>
                         <br />
-                        <input id="transmission"
+                        <select id="transmission" 
                             :class="{'bg-red-200 bg-opacity-5 border-red-400 border-2':!validate.transmission&&!validate.from}"
-                            @keyup="validate.transmission = product.transmission != ''" v-model="product.transmission"
-                            class="flex-grow mr-4 ml-2 rounded-md shadow-inner w-full bg-white bg-opacity-50 md:h-10 h-8 border-gray-100 border-2" />
+                            @keyup="validate.transmission = product.transmission != ''" v-model="product.transmission" 
+                            class="flex-grow mr-4 ml-2 rounded-md shadow-inner w-full bg-white bg-opacity-50 md:h-10 h-8 border-gray-100 border-2" 
+                            >
+                            <option value="AWD">AWD</option>
+                            <option value="RWD">RWD</option>
+                            <option value="FWD">FWD</option>
+                        </select>
                     </div>
                     <div class="mt-2">
                         <label class="shadow-xl" for="yom">YEAR OF MANUFACTURE :</label><span class="text-red-600"
