@@ -99,6 +99,9 @@ export default {
       }
       this.showProd = showProd
     },
+    async reloadPage(){
+      this.productPage = await this.fetch(this.urlPage)
+    },
     async changPage(n){
       if(this.urlPage.includes("?")){
         this.productPage = await this.fetch(this.urlPage+'&pageNo='+(n-1))

@@ -1,15 +1,20 @@
  <template>
    <div class="show font-serif fixed font-light bg-opacity-10 bg-black flex justify-center items-center  z-20 inset-0 overflow-y-auto overflow-x-auto">
      <div class=" w-320 h-128 bg-opacity-95 bg-gray-100 mb-5 flex flex-row rounded-xl fixed">
-      <base-popup v-if="popupShow" classpop="flex flex-col justify-center w-144 h-80  bg-gray-100  rounded-xl fixed shadow-2xl">
-      <div class="flex flex-col justify-center items-center">
-
+      <base-popup v-if="popupShow" classpop="flex flex-col justify-center  h-60  bg-gray-100  rounded-md fixed shadow-2xl">
+      <div class="flex flex-col justify-center text-center mx-12">
+        <p class="text-2xl text-gray-900 font-medium" >Confirm to delete <span class="text-red-600 font-semibold">{{product.productid}} {{product.productname}}</span></p>
+        <p class="text-xl text-gray-600 font-medium mt-6">Are you sure to delete the <span class="text-red-600 font-semibold">{{product.productid}} {{product.productname}}</span> cars?</p>
+        <div class="flex flex-row justify-center text-2xl mt-8 space-x-24">
+          <div @click="popupShow=false" class="rounded-md w-24 py-0.5 hover:bg-blue-400 hover:text-white hover:border-blue-800 transition duration-500 ease-in-out transform  hover:-translate-y-1 hover:scale-110 border-blue-600 text-blue-600 border-2 cursor-pointer">cancel</div>
+          <div @click="deleteProduct()" class="rounded-md w-24 py-0.5 hover:bg-red-500 hover:text-white hover:border-red-800 transition duration-500 ease-in-out transform  hover:-translate-y-1 hover:scale-110 border-red-600  text-red-600 border-2 cursor-pointer">delete</div>
+        </div>
       </div>
       </base-popup>
        <div class="w-7/12 bgsvg bg-no-repeat bg-center">
         <div class="text-5xl font-extrabold text-right mt-10 truncate">{{product.productname}}</div>
          <div class="flex flex-row justify-center items-center ">         
-           <img class="object-contain object-center -mt-20" alt="addcar" :src="img.url">
+           <img class="object-contain object-center mb-4 -mt-12 h-96" alt="Car product" :src="img.url">
          </div>
          <div class="flex flex-row justify-center items-center ">
            <div v-for="color in product.colorList" :key="color.colorid" class="w-9 h-9 rounded-full border-black border-2 hover:shadow-lg mx-2" v-bind:style="{ backgroundColor: color.colorcode }"></div>
@@ -43,9 +48,9 @@
               EDIT
              </button>
             </router-link>
-             <button @click="deletecar" class="px-3  h-7 font-base text-sm text-center flex flex-row justify-center items-center tracking-wider uppercase text-white rounded-lg shadow-xl 
+             <button @click="popupShow=true" class="px-3  h-7 font-base text-sm text-center flex flex-row justify-center items-center tracking-wider uppercase text-white rounded-lg shadow-xl 
              transition duration-500 ease-in-out transform bg-gradient-to-l from-dark hover:from-red-600 to-red-600 hover:to-dark
-             hover:-translate-y-1 hover:scale-110 focus:ring focus:outline-none">
+             hover:-translate-y-1 hover:scale-110 focus:ring focus:outline-none" >
                DELETE
              </button>
            </div>
@@ -70,8 +75,23 @@ export default {
     return {
       popupShow:false,
       img:"",
-      urlImg:"http://localhost:3000/img"
+      urlImg:"http://localhost:3000/img",
+      urlproduct:"http://localhost:3000/product"
     };
+  },
+  methods: {
+    async deleteProduct(){
+      try {
+        await fetch(this.urlproduct+"/delete/"+this.product.productid, {
+                    method: 'DELETE'
+                })
+        this.popupShow=false
+        this.$parent.reloadPage()
+        this.$parent.showProduct(false)
+      } catch (error) {
+        console.log(error);
+      }
+    }
   },
   async created() {
     this.img = await fetch(this.urlImg+"/"+this.product.img)

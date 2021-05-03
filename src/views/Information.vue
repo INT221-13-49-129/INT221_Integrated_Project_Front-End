@@ -2,7 +2,7 @@
     <div class="add font-serif font-light antialiased">
         <div class="px-56">
             <div class="px-20 bg-white mt-10 shadow-2xl">
-                <h1 class=" font-bold text-4xl text-center py-5 text-gray-800 ">{{ productid }}</h1>
+                <h1 class=" font-bold text-4xl text-center py-9 text-gray-800 ">{{ productid=='add'?'Add New Car':'Edit Information' }}</h1>
                 <div class="items-center flex flex-col w-full">
                     <div class=" border-gray-300 border-4 border-dashed p-2 flex justify-center items-center">
                     <img
@@ -11,7 +11,10 @@
                         :src="img.url"
                     />
                     </div>
-                    <input type="file" class="focus:outline-none mt-3 w-full" @change="uploadImg" />
+                    <div class="flex flex-row justify-start w-full">
+                        <input type="file" class="focus:outline-none mt-3 flex-grow" @change="uploadImg" ref="imgInput"/>
+                        <div class="text-red-600 mt-3" v-show="!validate.img&&!validate.from">Please add a picture!</div>
+                    </div>
                 </div>
                 <div class="flex flex-row flex-wrap justify-center items-center">
                     <div v-for="color in product.colorList" :key="color.colorid" class="h-11 w-11 rounded-full border-black border-2 hover:shadow-lg mx-2 mt-2" v-bind:style="{ backgroundColor: color.colorcode }"></div>
@@ -19,6 +22,10 @@
                         class="h-12 w-12 mt-2 mx-2 rounded-full text-white hover:text-red-600 hover:font-black text-center font-black text-3xl border-4 hover:border-red-600 bg-gradient-to-bl from-green-400 via-red-300 to-blue-700 cursor-pointer"
                     >+</div> <div class="text-red-600 mt-3" v-show="!validate.color&&!validate.from">Please select color!</div>
                 </div>
+                <div v-if="popupShow"><base-popup classpop="flex flex-col justify-center text-center h-44 bg-opacity-95 bg-gray-100  rounded-xl fixed">
+                <div :class="popupclass" class="text-3xl font-medium px-8 mt-2" >{{popupText}}</div>
+                <div class="w-full flex justify-center text-2xl "><div @click="popupShow=false,popupText=''" class="mt-9 rounded-md w-24 py-0.5 transition duration-500 ease-in-out transform  hover:-translate-y-1 hover:scale-110 hover:border-gray-800 border-gray-400 hover:text-gray-800 text-gray-400 border-2 cursor-pointer">cancel</div></div>
+                </base-popup></div>
                 <div v-if="colorListShow">
                     <base-popup
                         classpop="flex flex-col justify-center w-144 h-128 bg-opacity-95 bg-gray-100  rounded-xl fixed"
@@ -72,18 +79,18 @@
                           </select>
                     </div>
                     <div class="text-lg mt-2">
-                        <label for="power" class="shadow-xl">POWER <span class="text-xs">(kW)</span> : </label><span class="text-red-600" v-show="!validate.power&&!validate.from"> Please enter power! <span class="text-xs"> (Don't use negative numbers.)</span></span>
+                        <label for="power" class="shadow-xl">POWER <span class="text-xs">(kW)</span> : </label><span class="text-red-600" v-show="!validate.power&&!validate.from"> Please enter power! <span class="text-xs"> (Don't use negative numbers and decimal number.)</span></span>
                         <br />
-                        <input id="power" :class="{'bg-red-200 bg-opacity-5 border-red-400 border-2':!validate.power&&!validate.from}" @blur="validate.power = product.power != '' && product.power > 0" @keyup="validate.power = product.power != '' && product.power > 0"
+                        <input id="power" :class="{'bg-red-200 bg-opacity-5 border-red-400 border-2':!validate.power&&!validate.from}" @blur="validate.power = product.power != '' && product.power > 0 && product.power % 1 == 0" @keyup="validate.power = product.power != '' && product.power > 0 && product.power % 1 == 0"
                             v-model="product.power"
                             type="number"
                             class="flex-grow mr-4 ml-2 rounded-md shadow-inner w-full bg-white bg-opacity-50 h-10  border-gray-100 border-2"
                         />
                     </div>
                     <div class="text-lg mt-2">
-                        <label for="torque" class="shadow-xl">TORQUE <span class="text-xs">(Nm/s)</span> : </label><span class="text-red-600" v-show="!validate.torque&&!validate.from"> Please enter torque! <span class="text-xs"> (Don't use negative numbers.)</span></span>
+                        <label for="torque" class="shadow-xl">TORQUE <span class="text-xs">(Nm/s)</span> : </label><span class="text-red-600" v-show="!validate.torque&&!validate.from"> Please enter torque! <span class="text-xs"> (Don't use negative numbers and decimal number.)</span></span>
                         <br />
-                        <input id="torque" :class="{'bg-red-200 bg-opacity-5 border-red-400 border-2':!validate.torque&&!validate.from}" @blur="validate.torque = product.torque != '' && product.torque > 0" @keyup="validate.torque = product.torque != '' && product.torque > 0"
+                        <input id="torque" :class="{'bg-red-200 bg-opacity-5 border-red-400 border-2':!validate.torque&&!validate.from}" @blur="validate.torque = product.torque != '' && product.torque > 0 && product.torque % 1 == 0" @keyup="validate.torque = product.torque != '' && product.torque > 0 && product.torque % 1 == 0"
                             v-model="product.torque"
                             type="number"
                             class="flex-grow mr-4 ml-2 rounded-md shadow-inner w-full bg-white bg-opacity-50 h-10 border-gray-100 border-2"
@@ -125,7 +132,7 @@
                     </div>
                     <div class="flex flex-row justify-center pt-16 pb-28">
                         <button
-                            @click="validateFrom"
+                            @click="productid=='add'?addProduct():editProduct()"
                             class="text-lg tracking-wider uppercase px-7 mx-6 h-10 text-white rounded-lg shadow-xl transition duration-500 ease-in-out transform bg-gradient-to-r from-dark to-red-600 hover:from-red-600 hover:to-dark hover:-translate-y-1 hover:scale-110 focus:ring focus:outline-none"
                         >submit</button>
                         <router-link to="/store">
@@ -143,6 +150,10 @@ export default {
     props: ["productid"],
     data() {
         return {
+            popupclass:'',
+            popupShow:false,
+            popupText:'',
+            imgFile:null,
             colorHover:'',
             colorListShow: false,
             colorList: [],
@@ -151,7 +162,8 @@ export default {
             urlProduct: "http://localhost:3000/product",
             urlbrand: "http://localhost:3000/brand",
             urlImg:"http://localhost:3000/img",
-            img:{url:require("../assets/home/add.png")},
+            img:{url:""},
+            imgadd:require("../assets/home/add.png"),
             product: {
                 productid: 0,
                 productname: '',
@@ -161,6 +173,7 @@ export default {
                 transmission: '',
                 yom: '',
                 description: '',
+                img:'',
                 brand: {
                     brandid: 0,
                     brandname: ''
@@ -177,11 +190,102 @@ export default {
                 description:false,
                 brand:false,
                 color:false,
+                img:false,
                 from:true,
             }
         };
     },
     methods: {
+        async addProduct(){
+            this.validateFrom()
+            if(this.validate.from){
+                this.product.productid = await this.fetch(this.urlProduct+"/maxid") + 1
+                const jsonPro = await JSON.stringify(this.product)
+                const blob = await new Blob([jsonPro],{
+                    type: 'application/json'
+                })
+                let formData = new FormData()
+                formData.append('file',this.imgFile,this.product.img)
+                await formData.append('newProduct',blob)
+                const res = await fetch(this.urlProduct+"/add/withimg", {
+                    method: 'POST',
+                    body: formData
+                })
+                const data = await res.json()
+                if(data.errorStatus == 2002){
+                    this.popupShow = true
+                    this.popupText = "Car name already exists, please change it!!"
+                    this.popupclass="text-red-600"
+                    this.validate.name = false
+                    this.validate.from = false
+                    this.product.productname = ''
+                }else if(data.productid == this.product.productid){
+                    this.popupShow = true
+                    this.popupText = "Successfully added information"
+                    this.popupclass="text-blue-600"
+                    this.clear()
+                }
+            }else{
+                this.popupShow = true
+                this.popupText = "Please complete all information !!"
+                this.popupclass="text-red-600"
+            }
+        },
+        async editProduct(){
+            this.validateFrom()
+            if(this.validate.from){
+                const jsonPro = await JSON.stringify(this.product)
+                const blob = await new Blob([jsonPro],{
+                    type: 'application/json'
+                })
+                let formData = new FormData()
+                await formData.append('updateProduct',blob)
+                let data = null;
+                if(this.imgFile==null){
+                    const res = await fetch(this.urlProduct+"/edit/"+this.product.productid, {
+                    method: 'PUT',
+                    body: formData
+                })
+                data = await res.json()
+                }else{
+                    formData.append('file',this.imgFile,this.product.img)
+                    const res = await fetch(this.urlProduct+"/edit/"+this.product.productid+"/withimg", {
+                    method: 'PUT',
+                    body: formData
+                })
+                data = await res.json()
+                }
+                if(data.errorStatus == 2002){
+                    this.popupShow = true
+                    this.popupText = "Car name already exists, please change it!!"
+                    this.popupclass="text-red-600"
+                    this.validate.name = false
+                    this.validate.from = false
+                    this.product.productname = ''
+                }else if(data.productid == this.product.productid){
+                    this.popupShow = true
+                    this.popupText = "Successfully edited information"
+                    this.popupclass="text-blue-600"
+                    this.clear()
+                }
+            }else{
+                this.popupShow = true
+                this.popupText = "Please complete all information !!"
+                this.popupclass="text-red-600"
+            }
+        },
+        uploadImg(event) {
+            const file = event.target.files[0]
+            const reader = new FileReader()
+            this.img = {url:this.imgadd};
+            reader.onload = (event) => {
+                this.img.url = event.target.result;
+                this.validate.img = this.img.url != this.imgadd
+            };
+            reader.readAsDataURL(file);
+            this.imgFile = file
+            this.product.img = file.name
+        },
         clear(){
             this.product = {
                 productid: 0,
@@ -192,6 +296,7 @@ export default {
                 transmission: '',
                 yom: '',
                 description: '',
+                img:'',
                 brand: {
                     brandid: 0,
                     brandname: ''
@@ -199,17 +304,20 @@ export default {
                 colorList:[]
             };
             this.img={url:require("../assets/home/add.png")}
+            this.$refs.imgInput.value=null;
+            this.$router.push('/info/add')
         },
         validateFrom(){
             this.validate.name = this.product.productname != ''
-            this.validate.power = this.product.power != '' && this.product.power > 0
-            this.validate.torque = this.product.torque != '' && this.product.torque > 0
+            this.validate.power = this.product.power != '' && this.product.power > 0 && this.product.power % 1 == 0
+            this.validate.torque = this.product.torque != '' && this.product.torque > 0 && !this.product.torque % 1 == 0
             this.validate.weight = this.product.weight != '' && this.product.weight > 0
             this.validate.transmission = this.product.transmission != '' 
             this.validate.yom = this.product.yom != '' 
             this.validate.description = this.product.description != '' 
             this.validate.brand = this.product.brand.brandid != 0 
             this.validate.color = this.product.colorList.length != 0 
+            this.validate.img = this.img.url != this.imgadd
             this.validate.from = true
             Object.values(this.validate).forEach( v => {
                 this.validate.from = v && this.validate.from
@@ -242,7 +350,9 @@ export default {
             }else{
                 this.$router.push('/404')
             }
-        }else if(this.productid != 'add'){
+        }else if(this.productid == 'add'){
+            this.img.url = this.imgadd
+        }else{
             this.$router.push('/404')
         }
     },watch : {
