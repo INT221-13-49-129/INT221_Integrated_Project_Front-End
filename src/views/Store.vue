@@ -4,12 +4,13 @@
        <show :product="productShow"></show>
      </div>
      <div class="flex flex-col md:flex-row justify items-end mt-5">
-       <h1 class=" text-xl md:text-3xl font-bold text-white">
-         <span class=" md:text-4xl ">Cars</span> Available
+       <h1 class=" text-2xl md:text-3xl font-bold text-white">
+         <span class=" md:text-4xl text-3xl ">Cars</span> Available
        </h1>
-       <div class="font-light text-2ml px-2 w-full">
+        <div class="flex-grow"></div>
+       <div class="font-light text-2ml px-2 w-full md:w-auto">
          <div class="relative text-gray-100 flex justify-end mt-2 md:mt-0">
-           <div class="flex justify-start">
+           <div class="flex justify-start ">
              <button @click="searchfilter" type="submit" class="focus:outline-none absolute mt-1 ml-3 ">
                <i class="material-icons">search</i>
              </button>
