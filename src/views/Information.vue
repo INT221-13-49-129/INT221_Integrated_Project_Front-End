@@ -65,11 +65,12 @@
                 <div class="container flex flex-col md:mt-5 text-gray-700 font-normal md:text-lg text-sm ">
                     <div class="md:mt-2">
                         <label class="shadow-xl" for="name">NAME : </label><span class="text-red-600"
-                            v-show="!validate.name&&!validate.from"> Please enter name!</span>
+                            v-show="!validate.name&&!validate.from"> Please enter name! <span v-if="product.productname.length > 45"
+                            class="text-xs"> (Don't exceed 45 characters.)</span></span>
                         <br />
                         <input id="name"
                             :class="{'bg-red-200 bg-opacity-5 border-red-400 border-2':!validate.name&&!validate.from}"
-                            @keyup="validate.name = product.productname != ''" v-model="product.productname"
+                            @keyup="validate.name = product.productname != '' && product.productname.length < 46" v-model.trim="product.productname"
                             class="flex-grow mr-4 ml-2 rounded-md shadow-inner w-full bg-white bg-opacity-50 md:h-10 h-8 border-gray-100 border-2" />
                     </div>
                     <div class="mt-2">
@@ -88,36 +89,36 @@
                     <div class="mt-2">
                         <label for="power" class="shadow-xl">POWER <span class="text-xs">(kW)</span> : </label><span
                             class="text-red-600" v-show="!validate.power&&!validate.from"> Please enter power! <span
-                                class="text-xs"> (Don't use negative numbers and decimal number.)</span></span>
+                                class="text-xs">{{  2147483648 > parseInt(product.power) ? '(Don\'t use negative numbers and decimal number.)':'(Don\'t  number more than 2147483647.)'}}</span></span>
                         <br />
                         <input id="power"
                             :class="{'bg-red-200 bg-opacity-5 border-red-400 border-2':!validate.power&&!validate.from}"
-                            @blur="validate.power = product.power != '' && product.power > 0 && product.power % 1 == 0"
-                            @keyup="validate.power = product.power != '' && product.power > 0 && product.power % 1 == 0"
+                            @blur="validate.power = product.power != '' && product.power > 0 && product.power % 1 == 0 && product.power < 2147483648"
+                            @keyup="validate.power = product.power != '' && product.power > 0 && product.power % 1 == 0 && product.power < 2147483648"
                             v-model="product.power" type="number"
                             class="flex-grow mr-4 ml-2 rounded-md shadow-inner w-full bg-white bg-opacity-50 md:h-10 h-8 border-gray-100 border-2" />
                     </div>
                     <div class="mt-2">
                         <label for="torque" class="shadow-xl">TORQUE <span class="text-xs">(Nm/s)</span> : </label><span
                             class="text-red-600" v-show="!validate.torque&&!validate.from"> Please enter torque! <span
-                                class="text-xs"> (Don't use negative numbers and decimal number.)</span></span>
+                                class="text-xs">{{  2147483648 > parseInt(product.torque) ? '(Don\'t use negative numbers and decimal number.)':'(Don\'t  number more than 2147483647.)'}}</span></span>
                         <br />
                         <input id="torque"
                             :class="{'bg-red-200 bg-opacity-5 border-red-400 border-2':!validate.torque&&!validate.from}"
-                            @blur="validate.torque = product.torque != '' && product.torque > 0 && product.torque % 1 == 0"
-                            @keyup="validate.torque = product.torque != '' && product.torque > 0 && product.torque % 1 == 0"
+                            @blur="validate.torque = product.torque != '' && product.torque > 0 && product.torque % 1 == 0 && product.torque < 2147483648"
+                            @keyup="validate.torque = product.torque != '' && product.torque > 0 && product.torque % 1 == 0 && product.torque < 2147483648"
                             v-model="product.torque" type="number"
                             class="flex-grow mr-4 ml-2 rounded-md shadow-inner w-full bg-white bg-opacity-50 md:h-10 h-8 border-gray-100 border-2" />
                     </div>
                     <div class="mt-2">
                         <label class="shadow-xl" for="weight">WEIGHT <span class="text-sm">(t)</span> : </label><span
                             class="text-red-600" v-show="!validate.weight&&!validate.from">Please enter weight! <span
-                                class="text-xs"> (Don't use negative numbers.)</span></span>
+                                class="text-xs"> (Don't use negative numbers {{parseInt(product.weight) >= 10000000?'and don\'t number more than 10,000,000':''}}.)</span></span>
                         <br />
                         <input id="weight"
                             :class="{'bg-red-200 bg-opacity-5 border-red-400 border-2':!validate.weight&&!validate.from}"
-                            @blur="validate.weight = product.weight != '' && product.weight > 0"
-                            @keyup="validate.weight = product.weight != '' && product.weight > 0"
+                            @blur="validate.weight = product.weight != '' && product.weight > 0 && product.weight < 10000000"
+                            @keyup="validate.weight = product.weight != '' && product.weight > 0 && product.weight < 10000000"
                             v-model="product.weight" type="number"
                             class="flex-grow mr-4 ml-2 rounded-md shadow-inner w-full bg-white bg-opacity-50 md:h-10 h-8 border-gray-100 border-2" />
                     </div>
@@ -146,11 +147,12 @@
                     </div>
                     <div class="mt-2">
                         <label class="shadow-xl" for="description">DESCRIPTION :</label><span class="text-red-600"
-                            v-show="!validate.description&&!validate.from">Please enter description!</span>
+                            v-show="!validate.description&&!validate.from">Please enter description!<span v-if="product.description.length > 255"
+                            class="text-xs"> (Don't exceed 255 characters.)</span></span>
                         <br />
                         <textarea id="description"
                             :class="{'bg-red-200 bg-opacity-5 border-red-400 border-2':!validate.description&&!validate.from}"
-                            @keyup="validate.description = product.description != ''" v-model="product.description"
+                            @keyup="validate.description = product.description != '' && this.product.description.length < 256" v-model.trim="product.description"
                             class="flex-grow mr-4 ml-2 rounded-md shadow-inner h-24 w-full bg-white bg-opacity-50 border-gray-100 border-2"></textarea>
                     </div>
                     <div class="flex flex-row justify-center pt-16 md:pb-28 pb-16">
@@ -235,6 +237,7 @@
                         body: formData
                     })
                     const data = await res.json()
+                    console.log(data);
                     if (data.errorStatus == 2002) {
                         this.popupShow = true
                         this.popupText = "Car name already exists, please change it!!"
@@ -242,6 +245,10 @@
                         this.validate.name = false
                         this.validate.from = false
                         this.product.productname = ''
+                    } else if (data.status == 500) {
+                        this.popupShow = true
+                        this.popupText = "Submission failed,please enter correct information!!"
+                        this.popupclass = "text-red-600"
                     } else if (data.productid == this.product.productid) {
                         this.popupShow = true
                         this.popupText = "Successfully added information"
@@ -285,6 +292,10 @@
                         this.validate.name = false
                         this.validate.from = false
                         this.product.productname = ''
+                    } else if (data.status == 500) {
+                        this.popupShow = true
+                        this.popupText = "Submission failed,please enter correct information!!"
+                        this.popupclass = "text-red-600"
                     } else if (data.productid == this.product.productid) {
                         this.popupShow = true
                         this.popupText = "Successfully edited information"
@@ -299,6 +310,7 @@
             },
             uploadImg(event) {
                 const file = event.target.files[0]
+                if(this.isImage(file.name)){
                 const reader = new FileReader()
                 this.img = {
                     url: this.imgadd
@@ -310,6 +322,27 @@
                 reader.readAsDataURL(file);
                 this.imgFile = file
                 this.product.img = file.name
+            }else{
+                this.popupShow = true
+                this.popupText = "Please enter only image files!!"
+                this.popupclass = "text-red-600"
+                this.$refs.imgInput.value = null;
+            }
+            },
+            getExtension(filename) {
+                var parts = filename.split('.');
+                return parts[parts.length - 1];
+            },
+            isImage(filename) {
+                var ext = this.getExtension(filename);
+                switch (ext.toLowerCase()) {
+                case 'jpg':
+                case 'gif':
+                case 'bmp':
+                case 'png':
+                return true;
+            }
+            return false;
             },
             clear() {
                 this.product = {
@@ -335,13 +368,14 @@
                 this.$router.push('/info/add')
             },
             validateFrom() {
-                this.validate.name = this.product.productname != ''
-                this.validate.power = this.product.power != '' && this.product.power > 0 && this.product.power % 1 == 0
-                this.validate.torque = this.product.torque != '' && this.product.torque > 0 && this.product.torque % 1 == 0
-                this.validate.weight = this.product.weight != '' && this.product.weight > 0
+                this.validate.name = this.product.productname != '' && this.product.productname.length < 46
+                this.validate.power = this.product.power != '' && this.product.power > 0 && this.product.power % 1 == 0 && this.product.power < 2147483648
+                this.validate.torque = this.product.torque != '' && this.product.torque > 0 && this.product.torque % 1 == 0 && this.product.torque < 2147483648
+                this.product.weight = parseFloat(this.product.weight).toFixed(3)
+                this.validate.weight = this.product.weight != '' && this.product.weight > 0 && this.product.weight < 10000000
                 this.validate.transmission = this.product.transmission != ''
                 this.validate.yom = this.product.yom != ''
-                this.validate.description = this.product.description != ''
+                this.validate.description = this.product.description != '' && this.product.description.length < 256
                 this.validate.brand = this.product.brand.brandid != 0
                 this.validate.color = this.product.colorList.length != 0
                 this.validate.img = this.img.url != this.imgadd
