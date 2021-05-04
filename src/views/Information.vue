@@ -127,7 +127,7 @@
                         <br />
                         <select id="transmission" 
                             :class="{'bg-red-200 bg-opacity-5 border-red-400 border-2':!validate.transmission&&!validate.from}"
-                            @keyup="validate.transmission = product.transmission != ''" v-model="product.transmission" 
+                            @change="validate.transmission = product.transmission != ''" v-model="product.transmission" 
                             class="flex-grow mr-4 ml-2 rounded-md shadow-inner w-full bg-white bg-opacity-50 md:h-10 h-8 border-gray-100 border-2" 
                             >
                             <option value="AWD">AWD</option>
@@ -337,8 +337,7 @@
             validateFrom() {
                 this.validate.name = this.product.productname != ''
                 this.validate.power = this.product.power != '' && this.product.power > 0 && this.product.power % 1 == 0
-                this.validate.torque = this.product.torque != '' && this.product.torque > 0 && !this.product.torque %
-                    1 == 0
+                this.validate.torque = this.product.torque != '' && this.product.torque > 0 && this.product.torque % 1 == 0
                 this.validate.weight = this.product.weight != '' && this.product.weight > 0
                 this.validate.transmission = this.product.transmission != ''
                 this.validate.yom = this.product.yom != ''
