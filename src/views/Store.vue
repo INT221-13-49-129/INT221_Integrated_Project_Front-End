@@ -49,6 +49,7 @@
        </div>
      </div>
      <div>
+       <div v-show="productPage.content.length==0">No resut</div>
        <div v-if="productGrid" class="flex flex-row flex-wrap ml-4">
          <div :class="{'bg-white bg-opacity-30':productShow.productid == pro.productid}"
            class="md:w-72 w-5/12 m-3 pb-4 rounded-xl hover:bg-white hover:bg-opacity-30"
@@ -87,8 +88,8 @@
          brandSelected: "",
          brandAll: [],
          productPage: [],
-         urlbrand: "http://localhost:3000/brand",
-         urlProduct: "http://localhost:3000/product",
+         urlbrand: `${process.env.VUE_APP_ROOT_API}brand`,
+         urlProduct: `${process.env.VUE_APP_ROOT_API}product`,
          urlPage: "",
          showProd: false,
          productShow: []

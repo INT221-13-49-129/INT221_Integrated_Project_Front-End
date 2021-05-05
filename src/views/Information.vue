@@ -181,10 +181,10 @@
                 colorListShow: false,
                 colorList: [],
                 brandAll: [],
-                urlColor: "http://localhost:3000/color",
-                urlProduct: "http://localhost:3000/product",
-                urlbrand: "http://localhost:3000/brand",
-                urlImg: "http://localhost:3000/img",
+                urlColor: `${process.env.VUE_APP_ROOT_API}color`,
+                urlProduct: `${process.env.VUE_APP_ROOT_API}product`,
+                urlbrand: `${process.env.VUE_APP_ROOT_API}brand`,
+                urlImg: `${process.env.VUE_APP_ROOT_API}img`,
                 img: {
                     url: ""
                 },
