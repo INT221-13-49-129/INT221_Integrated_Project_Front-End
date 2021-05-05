@@ -49,10 +49,10 @@
        </div>
      </div>
      <div>
-       <div v-show="productPage.content != undefined ?productPage.content.length==0:false"
+       <div v-show="searchInputNoresults != ''"
        class="text-center font-thin text-xl py-8 text-gray-300">
        <span class="material-icons text-8xl font-thin pb-6 ">sentiment_very_dissatisfied</span><br>
-       No results found for <br><span class="font-semibold text-2xl">"{{searchInput}}"</span></div>
+       No results found for <br><span class="font-semibold text-2xl">"{{searchInputNoresults}}"</span></div>
        <div v-if="productGrid" class="flex flex-row flex-wrap ml-4">
          <div :class="{'bg-white bg-opacity-30':productShow.productid == pro.productid}"
            class="md:w-72 w-5/12 m-3 pb-4 rounded-xl hover:bg-white hover:bg-opacity-30"
@@ -88,6 +88,7 @@
        return {
          productGrid: true,
          searchInput: "",
+         searchInputNoresults: "",
          brandSelected: "",
          brandAll: [],
          productPage: [],
@@ -120,6 +121,11 @@
        async searchfilter() {
          this.urlPage = this.urlProduct + '/page/search?searchData=' + this.searchInput
          this.productPage = await this.fetch(this.urlPage)
+         if(this.productPage.content != undefined ?this.productPage.content.length==0:false){
+          this.searchInputNoresults = this.searchInput
+         }else{
+          this.searchInputNoresults = ""
+         }
          this.brandSelected = ""
        },
        async brandfilter(id) {
@@ -129,6 +135,7 @@
            this.urlPage = this.urlProduct + '/page'
          }
          this.productPage = await this.fetch(this.urlPage)
+         this.searchInputNoresults = ""
          this.searchInput = ""
        },
        async fetch(url) {
