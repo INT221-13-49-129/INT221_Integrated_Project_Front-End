@@ -9,8 +9,4 @@
               <p class="text-center md:text-base text-xs">The page you requested could not be found. Perhaps searching will help.</p>  
         </div>
     </div>
-
-
-
-
 </template>

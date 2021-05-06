@@ -42,6 +42,5 @@
         <img src="../assets/New.png" />
       </div>
     </div>
-
   </div>
 </template>

@@ -160,7 +160,7 @@
         prodshowhover:false,
         productRand: [],
         productCurrent: [],
-        url: "http://localhost:3000/product"
+        url: `${process.env.VUE_APP_ROOT_API}product`
       };
     },
     methods: {

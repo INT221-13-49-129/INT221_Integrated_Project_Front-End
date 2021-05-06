@@ -33,7 +33,7 @@ export default {
   data() {
     return {
       img:"",
-      urlImg:"http://localhost:3000/img"
+      urlImg:`${process.env.VUE_APP_ROOT_API}img`
     };
   },
   async created() {

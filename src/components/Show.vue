@@ -111,8 +111,8 @@
        return {
          popupShow: false,
          img: "",
-         urlImg: "http://localhost:3000/img",
-         urlproduct: "http://localhost:3000/product"
+         urlImg: `${process.env.VUE_APP_ROOT_API}img`,
+         urlproduct: `${process.env.VUE_APP_ROOT_API}product`
        };
      },
      methods: {
