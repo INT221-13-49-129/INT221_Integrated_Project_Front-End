@@ -8,8 +8,8 @@
         <div class="md:text-xl text-sm font-medium text-white  md:py-2 ">นาย คามิน โต๊ะประดู่</div>
         <div class="md:text-xl text-sm text-white  md:py-2 ">Kamin Tohpradu</div>
         <div class="md:text-xl text-sm text-white md:py-2 px-5">ฝ่ายงานที่รับผิดชอบ</div>
-        <div class="md:text-base text-xs text-white md:py-2 px-10">FRONT-END / BACK-END</div>
-        <div class="md:text-base text-xs text-white px-10">นอนกลางวัน/ตื่นกลางคืน</div>
+        <div class="md:text-base text-xs text-white md:py-2 px-10">FRONT-END / BACK-END / DATABASE</div>
+        <div class="md:text-base text-xs text-white px-10">62130500013</div>
       </div>
       <div class="flex justify-center item-center w-1/2">
         <img src="../assets/Kamin.png" />
@@ -25,8 +25,8 @@
       <div class="md:text-xl text-sm text-white md:py-2 font-medium">นางสาว ปรียานุช บัวดำ</div>
       <div class="md:text-xl text-sm text-white md:py-2">Priyanut Buadum</div>
       <div class="md:text-xl text-sm text-white md:py-2 mx-5">ฝ่ายงานที่รับผิดชอบ</div>
-      <div class="md:text-base text-xs text-white mx-10 py-2">FRONT-END / DATABASE</div>
-      <div class="md:text-base text-xs text-white md:py-2 mx-10">นอนทั้งกลางคืนทั้งกลางวัน</div>
+      <div class="md:text-base text-xs text-white mx-10 py-2">FRONT-END</div>
+      <div class="md:text-base text-xs text-white md:py-2 mx-10">62130500129</div>
     </div>
   </div>
   <div class="flex justify-end">
@@ -35,8 +35,8 @@
         <div class="md:text-xl text-sm md:py-2 font-medium">นาย ปฏิภาณ เทียนสุวรรณ</div>
         <div class="md:text-xl text-sm md:py-2">Patiphan Thiansuwan</div>
         <div class="md:text-xl text-sm md:py-2">ฝ่ายงานที่รับผิดชอบ</div>
-        <div class="md:text-base text-xs mx-10">NETWORK / DEVOP</div>
-        <div class="md:text-base text-xs mx-10 md:py-2">นอนกลางคืน/ตื่นกลางวัน</div>
+        <div class="md:text-base text-xs mx-10">NETWORK / DEVOP / DATABASE</div>
+        <div class="md:text-base text-xs mx-10 md:py-2">62130500049</div>
       </div>
       <div class="flex justify-center item-center w-1/2">
         <img src="../assets/New.png" />
