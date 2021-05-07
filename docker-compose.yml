@@ -1,0 +1,12 @@
+version: "3"
+services:
+    frontend:
+        build: 
+         context: .
+         args:
+            BACKEND_URL: ${BACKEND_URL}
+        image: frontend
+networks:
+    default:
+       external:
+          name: allnetwork
