@@ -1,8 +1,7 @@
-version: "3.8"
+version: "3"
 services:
     frontend:
-        build: 
-         context: .
+        build: .
         image: frontend
 
 networks:
