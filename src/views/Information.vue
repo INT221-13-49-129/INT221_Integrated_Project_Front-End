@@ -160,7 +160,7 @@
                             class="text-lg tracking-wider uppercase px-7 mx-6 h-10 text-white rounded-lg shadow-xl transition duration-500 ease-in-out transform bg-gradient-to-r from-dark to-red-600 hover:from-red-600 hover:to-dark hover:-translate-y-1 hover:scale-110 focus:ring focus:outline-none">submit</button>
                         <router-link to="/store">
                             <button
-                                class="text-lg tracking-wider uppercase px-7 mx-6 h-10 text-white rounded-lg shadow-xl transition duration-500 ease-in-out transform bg-gradient-to-l from-dark hover:from-red-600 to-red-600 hover:to-dark hover:-translate-y-1 hover:scale-110 focus:ring focus:outline-none">cancle</button>
+                                class="text-lg tracking-wider uppercase px-7 mx-6 h-10 text-white rounded-lg shadow-xl transition duration-500 ease-in-out transform bg-gradient-to-l from-dark hover:from-red-600 to-red-600 hover:to-dark hover:-translate-y-1 hover:scale-110 focus:ring focus:outline-none">cancel</button>
                         </router-link>
                     </div>
                 </div>
