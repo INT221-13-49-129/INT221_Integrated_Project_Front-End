@@ -40,7 +40,7 @@
       </p>
       <div class="">
         <section class="text-gray-700 mt-48">
-          <div :class="{'-translate-y-28 opacity-100':producthover}" class="opacity-50 md:px-5 py-10 mx-4 md:mx-auto bg-no-repeat bg-center bg-white bg-opacity-90 rounded-xl shadow-2xl transition duration-700 ease-in-out transform">
+          <div :class="{'-translate-y-28 opacity-100':producthover}" class="md:opacity-50 md:px-5 py-10 mx-4 md:mx-auto bg-no-repeat bg-center bg-white bg-opacity-90 rounded-xl shadow-2xl transition duration-700 ease-in-out transform">
           <p class="font-thin text-xl tracking-wider rounded-sm text-black text-center">BEST SELLER</p>
         <p class="font-light text-3xl md:text-4xl tracking-wider mt-5 mb-3 md:mb-12 textgray-900 text-center">YOUR STYPE YOU WANT</p>
             <div class="flex flex-col justify-center mx-auto ">
@@ -82,7 +82,7 @@
         </section>
       </div>
       <section class="text-gray-700 body-font pt-20" @mouseover="prodshowhover = true">
-        <div :class="{'-translate-y-20 opacity-100':prodshowhover}" class="opacity-50 flex md:flex-row flex-col-reverse items-center md:mx-auto px-20 py-16 mx-4 bg-white shadow-2xl bg-opacity-90 rounded-2xl transition duration-1000 ease-in-out transform">
+        <div :class="{'-translate-y-20 opacity-100':prodshowhover}" class="md:opacity-50 flex md:flex-row flex-col-reverse items-center md:mx-auto px-20 py-16 mx-4 bg-white shadow-2xl bg-opacity-90 rounded-2xl transition duration-1000 ease-in-out transform">
           <div class=" w-full md:w-1/3 container flex flex-col items-center">
             <div>
               <h1 class="text-xl font-bold tracking-tight text-center text-gray-800">EXTERIOR & INTERIOR TWO-TONE</h1>
