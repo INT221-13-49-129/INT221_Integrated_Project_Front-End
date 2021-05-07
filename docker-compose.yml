@@ -3,8 +3,6 @@ services:
     frontend:
         build: 
          context: .
-         args: 
-            VUE_APP_ROOT_API=http://104.215.186.188:3000
         image: frontend
 networks:
     default:
