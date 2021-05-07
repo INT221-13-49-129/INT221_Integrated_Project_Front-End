@@ -52,7 +52,7 @@
        <div v-show="searchInputNoresults != ''"
        class="text-center font-thin text-xl py-8 text-gray-300">
        <span class="material-icons text-8xl font-thin pb-6 ">sentiment_very_dissatisfied</span><br>
-       No results found for <br><span class="font-semibold text-2xl">"{{searchInputNoresults}}"</span></div>
+       No results found <br><span class="font-semibold text-2xl">"{{searchInputNoresults}}"</span></div>
        <div v-if="productGrid" class="flex flex-row flex-wrap ml-4">
          <div :class="{'bg-white bg-opacity-30':productShow.productid == pro.productid}"
            class="md:w-72 w-5/12 m-3 pb-4 rounded-xl hover:bg-white hover:bg-opacity-30"
@@ -119,6 +119,8 @@
          }
        },
        async searchfilter() {
+        var format = /[ `!@#$%^&*()_+/\-=[\]{};':"\\|,.<>?~]/;
+        if(!format.test(this.searchInput)){
          this.urlPage = this.urlProduct + '/page/search?searchData=' + this.searchInput
          this.productPage = await this.fetch(this.urlPage)
          if(this.productPage.content != undefined ?this.productPage.content.length==0:false){
@@ -126,7 +128,11 @@
          }else{
           this.searchInputNoresults = ""
          }
-         this.brandSelected = ""
+        }else{
+          this.searchInputNoresults = "Don't use special characters."
+          this.productPage.content = undefined;
+        }
+        this.brandSelected = ""
        },
        async brandfilter(id) {
          if (!id == "") {
