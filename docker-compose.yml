@@ -1,0 +1,10 @@
+version: "3"
+services:
+    frontend:
+        build: 
+         context: .
+        image: frontend
+networks:
+    default:
+       external:
+          name: allnetwork
