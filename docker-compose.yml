@@ -5,8 +5,6 @@ services:
         build: 
             context: .
         image: frontend
-        ports: 
-            - "80:80"
 
 networks:
     default:
