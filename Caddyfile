@@ -1,0 +1,5 @@
+:3333
+
+reverse_proxy /api/* api:8000
+root * /home/www
+file_server
