@@ -8,7 +8,7 @@ services:
         ports:
             - "80:80"
     proxy:
-        build: /Caddyfile
+        build: Caddyfile
         ports: 
             - 3333:3333 
     api:
