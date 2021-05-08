@@ -5,7 +5,10 @@ services:
         build: 
             context: .
         image: frontend
+        ports: 
+            - "8080:80"
     reverseproxy:
+        container_name: reverseproxy
         image: nginx
         volumes:
             - ./nginx.conf:/etc/nginx/conf.d/default.conf
