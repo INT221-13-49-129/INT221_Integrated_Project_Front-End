@@ -130,7 +130,7 @@
          }
         }else{
           this.searchInputNoresults = "Don't use special characters."
-          this.productPage.content = [];
+          this.productPage = [];
         }
         this.brandSelected = ""
        },
