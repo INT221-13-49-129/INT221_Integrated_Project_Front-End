@@ -5,20 +5,6 @@ services:
         build: 
             context: .
         image: frontend
-        networks:
-            allnetwork:
-              ipv4_address: 172.20.0.3
-    reverseproxy:
-        image: nginx
-        depends_on: 
-            - frontend
-        volumes:
-         - ./nginx.conf:/etc/nginx/conf.d/default.conf
-        ports:
-         - "80:80"
-        networks:
-            allnetwork:
-              ipv4_address: 172.20.0.5
 
 networks:
     default:
