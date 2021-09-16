@@ -8,7 +8,6 @@ pipeline {
                 sh 'docker stop frontend'
                 sh 'docker rm frontend'
                 sh 'docker image rm frontend'
-                sh 'docker-compose --version'
             }
         }
 
